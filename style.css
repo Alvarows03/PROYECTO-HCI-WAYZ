@@ -1,0 +1,35 @@
+header {
+    display: flex; /* convierte el header en un contenedor flexible , sus hijos pa
+                    san a apilarse de hacia abajo a ponerse en fila */
+    justify-content: center; /* Reparte el espacio sobrante entre los hijos :
+                            el primero queda pegado a la izquierda, el ultimo a la
+                            derecha */
+    align-items: center;     /* Los centra verticalmente */
+    padding: 0.1rem;
+    background: #f4f5fb;
+    border-radius: 0.75rem;
+    margin: 1.5rem 1rem;
+}
+
+.logo {
+    height: 5rem;
+    padding: 0rem 5.5rem 0rem 0rem; /* recuerda es izquierda,derecha,arriba,abajo */
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a1a4d;
+}
+
+.boton {
+    background: #ff7a00;
+    color: #1a1a4d;
+    padding: 10rem 20rem;
+    border-radius: 8rem;
+    text-decoration: none;
+}
