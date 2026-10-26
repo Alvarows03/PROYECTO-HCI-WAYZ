@@ -1,12 +1,113 @@
-<!-- PANEL DEL ANALISTA -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/W-01/style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="topbar-nav">
+        <header class="topbar-brand title">
+          <h1 class="topbar-title">Wayz</h1>
+        </header>
+        <input
+          type="search"
+          id="caja-buscar"
+          class="topbar-search"
+          name="q"
+          placeholder="Buscar caso, asegurado DNI o RUC..."
+          required
+        />
+        <p class="topbar-role rol">Analista</p>
+      </nav>
+    </header>
+    <main class="dashboard">
+      <aside class="sidebar">
+        <ul class="sidebar-list">
+          <li class="sidebar-item">Panel</li>
+          <li class="sidebar-item">Reclamos</li>
+          <li class="sidebar-item">Historial</li>
+          <li class="sidebar-item">Configuración</li>
+        </ul>
+      </aside>
+      <section class="dashboard-claims">
+        <header class="dashboard-summary">
+          <article class="summary-card">
+            <p class="summary-card-label">Reclamos</p>
+            <span class="summary-card-value">12</span>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card-label">Riesgo Alto</p>
+            <span class="summary-card-value">3</span>
+          </article>
+          <article class="summary-card">
+            <p class="summary-card-label">Monto en Revisión</p>
+            <span class="summary-card-value">86200</span>
+          </article>
+        </header>
+
+        <section class="claims">
+          <ul class="claims__list">
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--high"
+                >92-ALTO</span
+              >
+              <p>RC-2041</p>
+              <p>Cliente A</p>
+              <p>$18' 500</p>
+              <button class="claim-card__action">Revisar</button>
+            </li>
+
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--high"
+                >87-ALTO</span
+              >
+              <p>RC-2038</p>
+              <p>Cliente B</p>
+              <p>$9'200</p>
+              <button class="claim-card__action">Revisar</button>
+            </li>
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--high"
+                >81-ALTO</span
+              >
+              <p></p>
+              <p></p>
+              <p></p>
+              <button class="claim-card__action"></button>
+            </li>
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--medium"
+                >64-MEDIO</span
+              >
+              <p></p>
+              <p></p>
+              <p></p>
+              <button class="claim-card__action"></button>
+            </li>
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--medium"
+                >55-MEDIO</span
+              >
+              <p></p>
+              <p></p>
+              <p></p>
+              <button class="claim-card__action"></button>
+            </li>
+            <li class="claim-card">
+              <span class="claim-card__risk claim-card__risk--low"
+                >31-BAJO</span
+              >
+              <p></p>
+              <p></p>
+              <p></p>
+              <button class="claim-card__action"></button>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
 </html>
