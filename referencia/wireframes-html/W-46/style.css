@@ -1,0 +1,18 @@
+/* ============ W-46 Preferencias de lectura (paleta y contraste) ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.encabezado__botones { display: flex; gap: 10px; }
+.lectura { display: grid; grid-template-columns: 1fr 1.3fr; gap: 16px; margin-top: 12px; align-items: start; }
+.rotulo { margin: 0 0 8px; font-size: 8px; font-weight: bold; }
+.paleta { display: flex; gap: 10px; margin-bottom: 20px; }
+.muestra { padding: 0; font: inherit; text-align: center; background: none; border: none; cursor: pointer; }
+.muestra i { display: block; width: 52px; height: 36px; border: 1px solid var(--borde-error); }
+.muestra small { font-size: 6.5px; }
+.deslizador { display: block; margin-bottom: 20px; }
+.deslizador span { display: block; margin-bottom: 6px; font-size: 8px; font-weight: bold; }
+.deslizador input { width: 100%; accent-color: var(--azul-oscuro); }
+.interruptor--fila { display: flex; justify-content: space-between; width: 100%; font-size: 8px; font-weight: normal; }
+.hoja { padding: 14px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; box-shadow: 0 2px 8px rgba(15, 23, 41, 0.1); }
+.hoja i { display: block; height: 6px; margin-bottom: 10px; background: #cfd5df; border-radius: 3px; }
+.hoja i.corta { width: 70%; } .hoja i.media { width: 85%; }
+.resaltado { margin: 14px 0; padding: 7px 10px; font-size: 8px; font-weight: bold; color: var(--blanco); background: var(--navy-header); border-radius: 6px; }
+@media (max-width: 900px) { .lectura { grid-template-columns: 1fr; } }

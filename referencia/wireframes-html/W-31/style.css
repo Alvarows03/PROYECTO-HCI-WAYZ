@@ -1,0 +1,8 @@
+/* ============ W-31 Antecedentes de arbitrajes y procesos ============ */
+.filtros { display: flex; gap: 10px; margin: 12px 0 14px; }
+.filtros select { width: 100px; height: 30px; padding: 0 10px; font: inherit; font-size: 10px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.procesos { display: grid; grid-template-columns: 2.4fr 1fr; gap: 16px; align-items: start; }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.dona { position: relative; width: 150px; height: 150px; margin: 12px auto; background: conic-gradient(var(--verde) 0 60%, #d4dae4 60% 100%); border-radius: 50%; }
+.dona span { position: absolute; inset: 30px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; background: var(--blanco); border-radius: 50%; }
+@media (max-width: 900px) { .procesos { grid-template-columns: 1fr; } }

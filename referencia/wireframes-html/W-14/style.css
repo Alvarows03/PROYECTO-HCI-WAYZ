@@ -1,0 +1,5 @@
+/* ============ W-14 Decisión del caso (ventana) ============ */
+.etiqueta-seccion { margin: 0; font-size: 9px; font-weight: bold; color: var(--etiqueta); }
+.reglas { margin: 0; padding: 10px 12px 14px; border: 1px solid var(--borde); border-radius: 8px; }
+.reglas legend { padding: 0 4px; font-size: 9px; font-weight: bold; color: var(--etiqueta); }
+.reglas select { width: 220px; height: 28px; padding: 0 8px; font: inherit; font-size: 9px; border: 1px solid var(--borde); border-radius: 6px; }

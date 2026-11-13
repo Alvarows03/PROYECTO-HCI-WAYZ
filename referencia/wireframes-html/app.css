@@ -1,0 +1,442 @@
+/* ============================================
+   app.css  ->  estructura y piezas compartidas por las
+   pantallas internas (W-03 en adelante).
+   Se enlaza DESPUÉS de comunes.css:
+   <link rel="stylesheet" href="../comunes.css">
+   <link rel="stylesheet" href="../app.css">
+   ============================================ */
+
+/* ---------- 1. Estructura general: cabecera + menú lateral + contenido ---------- */
+.app {
+    display: grid;
+    grid-template-columns: 202px 1fr;      /* menú fijo, contenido flexible */
+    grid-template-rows: 58px 1fr;          /* cabecera, resto */
+    min-height: 100vh;
+    background: var(--fondo-app);
+}
+
+/* ---------- 2. Cabecera ---------- */
+.cabecera {
+    grid-column: 1 / -1;                   /* ocupa las dos columnas */
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 18px;
+    background: var(--navy-header);
+}
+
+.cabecera__marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 34px;
+    background: var(--blanco);
+    border-radius: 8px;
+}
+
+.cabecera__marca img {
+    height: 30px;
+}
+
+.cabecera__buscar {
+    position: relative;
+    margin-left: 150px;
+    width: 418px;
+}
+
+.cabecera__buscar input {
+    width: 100%;
+    height: 34px;
+    padding: 0 34px 0 14px;
+    font: inherit;
+    font-size: 12px;
+    border: none;
+    border-radius: 17px;
+}
+
+.cabecera__buscar span {
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    font-size: 13px;
+}
+
+.cabecera__campana {
+    position: relative;
+    margin-left: auto;                     /* empuja campana y usuario a la derecha */
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+    line-height: 34px;
+    text-align: center;
+    color: var(--blanco);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.cabecera__campana::after {                /* puntito rojo de alerta */
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 9px;
+    height: 9px;
+    background: var(--rojo);
+    border-radius: 50%;
+}
+
+.cabecera__usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 285px;
+    height: 37px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--navy-lateral);
+    background: var(--ambar);
+    border-radius: 19px;
+    text-decoration: none;
+}
+
+/* ---------- 3. Menú lateral ---------- */
+.lateral {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 8px;
+    background: var(--navy-lateral);
+}
+
+.lateral a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    margin-bottom: 9px;
+    padding-left: 16px;
+    font-size: 12px;
+    color: #c9d4e8;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.lateral a:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.lateral a.activo {
+    color: var(--blanco);
+    font-weight: bold;
+    background: var(--navy-activo);
+    box-shadow: inset 5px 0 0 var(--ambar);  /* barrita ámbar a la izquierda */
+}
+
+.lateral small {
+    margin-top: auto;                      /* empuja la nota al fondo */
+    padding: 0 6px;
+    font-size: 9px;
+    line-height: 1.4;
+    color: #7f8fb0;
+}
+
+/* ---------- 4. Zona de contenido ---------- */
+.contenido {
+    min-width: 0;                          /* evita que tablas anchas rompan el grid */
+}
+
+.pestanas {
+    display: flex;
+    gap: 14px;
+    padding: 0 22px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+.pestanas a {
+    padding: 14px 20px 12px;
+    font-size: 11.5px;
+    color: var(--etiqueta);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+.pestanas a.activo {
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    border-bottom-color: var(--ambar);
+}
+
+.pagina {
+    padding: 14px 22px 28px;
+}
+
+.pagina__titulo {
+    margin: 0;
+    font-size: 19px;
+    color: var(--azul-oscuro);
+}
+
+.migas {
+    margin: 0 0 4px;
+    font-size: 9px;
+    color: var(--texto-suave);
+}
+
+/* ---------- 5. Tarjetas ---------- */
+.tarjeta {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 41, 0.07);
+    padding: 12px 16px;
+}
+
+.tarjeta h2 {
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: var(--azul-oscuro);
+}
+
+/* ---------- 6. Tablas ---------- */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+}
+
+.tabla th {
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 10px;
+    color: var(--etiqueta);
+    background: #eef2f8;
+}
+
+.tabla td {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla tbody tr:hover {
+    background: #f6f8fc;
+}
+
+.tabla tr.destacada {
+    background: #fff1f1;
+    box-shadow: inset 4px 0 0 var(--rojo);
+}
+
+.tabla a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- 7. Etiquetas de colores (badges) ---------- */
+.etiqueta {
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.etiqueta--rojo  { color: var(--rojo);        background: var(--rojo-suave);  border-color: #f3b6b6; }
+.etiqueta--ambar { color: var(--ambar-texto); background: var(--ambar-suave); border-color: #f0d28f; }
+.etiqueta--verde { color: var(--verde);       background: var(--verde-suave); border-color: #a9dfbc; }
+.etiqueta--gris  { color: var(--etiqueta);    background: #eef2f8;            border-color: var(--borde); }
+
+/* ---------- 8. Formularios ---------- */
+.campo {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.campo > span {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--etiqueta);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    font: inherit;
+    font-size: 10.5px;
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra-campo);
+}
+
+.campo textarea {
+    height: 90px;
+    padding-top: 8px;
+    resize: vertical;
+}
+
+/* ---------- 9. Barra de progreso ---------- */
+.progreso {
+    height: 6px;
+    background: #dfe5ee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progreso > div {
+    height: 100%;
+    background: var(--azul-oscuro);
+}
+
+/* ---------- 10. Interruptor (toggle) ---------- */
+.interruptor {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--etiqueta);
+}
+
+.interruptor input {
+    appearance: none;                      /* quita el aspecto normal del checkbox */
+    position: relative;
+    width: 37px;
+    height: 19px;
+    margin: 0;
+    background: var(--ambar);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.interruptor input::after {                /* la bolita blanca */
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background: var(--blanco);
+    border-radius: 50%;
+    transition: all 0.15s;
+}
+
+.interruptor input:not(:checked) {
+    background: #b8c2d3;
+}
+
+.interruptor input:not(:checked)::after {
+    right: 20px;
+}
+
+/* ---------- 11. Ventana emergente (modal) ---------- */
+.fondo-modal {
+    position: fixed;                       /* tapa toda la pantalla */
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 41, 0.55);
+}
+
+.modal {
+    width: min(547px, 92vw);
+    overflow: hidden;
+    background: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.modal__titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 43px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--blanco);
+    background: var(--navy-header);
+}
+
+.modal__cerrar {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--blanco);
+    background: var(--rojo);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.modal__cuerpo {
+    padding: 18px 28px 22px;
+}
+
+/* ---------- 12. Piezas extra para ventanas y formularios ---------- */
+.modal__titulo {
+    /* (ya definido arriba) */
+}
+
+.modal__cerrar--gris {
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+}
+
+.modal__acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.radios {
+    display: flex;
+    gap: 40px;
+    margin: 4px 0 16px;
+    font-size: 10px;
+}
+
+.radios label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nota-pie {
+    margin: 4px 0 14px;
+    font-size: 8px;
+    color: var(--texto-suave);
+}
+
+.casilla {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+/* Fondo simple detrás de ventanas: dos tarjetas vacías */
+.fondo-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.fondo-cards .tarjeta {
+    min-height: 220px;
+}

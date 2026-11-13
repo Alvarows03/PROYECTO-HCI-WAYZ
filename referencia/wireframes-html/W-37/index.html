@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Seguimiento SCTR y Vida en tiempo real</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../W-04/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-04/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html" class="activo">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Gerencia › Reservas y reportes</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">SCTR y Vida en tiempo real</h1>
+                <small>Actualizado hace 3 s</small>
+            </div>
+            <div class="kpis">
+                <div class="kpi kpi--azul"><span>Solicitudes abiertas</span><strong>31</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Dentro de plazo</span><strong>27</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Fuera de plazo</span><strong>4</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+            </div>
+            <div class="segmentos"><a class="boton boton--primario" href="#">Todas</a><a class="boton" href="#">SCTR</a><a class="boton" href="#">Vida</a></div>
+            <section class="tarjeta">
+                <table class="tabla">
+                    <thead><tr><th>Solicitud</th><th>Cobertura</th><th>Trabajador / asegurado</th><th>Estado</th><th>Plazo</th></tr></thead>
+                    <tbody>
+                    <tr><td>SOL-310</td><td>SCTR</td><td>Trabajador 1</td><td>Atención médica</td><td>En plazo</td></tr>
+                    <tr><td>SOL-309</td><td>Vida</td><td>Asegurado 2</td><td>En evaluación</td><td>En plazo</td></tr>
+                    <tr><td>SOL-307</td><td>SCTR</td><td>Trabajador 3</td><td>Documentos pendientes</td><td><span class="etiqueta etiqueta--ambar">Por vencer</span></td></tr>
+                    <tr class="seleccionada"><td>SOL-301</td><td>SCTR</td><td>Trabajador 4</td><td>Atención médica</td><td>Fuera de plazo</td></tr>
+                    <tr><td>SOL-298</td><td>Vida</td><td>Asegurado 5</td><td>Pago en proceso</td><td>En plazo</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <p class="nota-pie"><a href="../W-41/index.html">Ver reportes regulatorios programados →</a></p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* ============ W-12 Expediente – Casos similares y redes sospechosas ============ */
+.similares { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+.filtro { width: 200px; height: 28px; margin-bottom: 12px; padding: 0 8px; font: inherit; font-size: 9px;
+    background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; box-shadow: var(--sombra-campo); }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.red { width: 100%; height: auto; margin: 8px 0; }
+.aviso-punteado { margin: 12px 0 0; padding: 18px 12px; font-size: 9px; background: var(--ambar-suave);
+    border-left: 4px solid var(--ambar); border-radius: 6px; }
+@media (max-width: 900px) { .similares { grid-template-columns: 1fr; } }

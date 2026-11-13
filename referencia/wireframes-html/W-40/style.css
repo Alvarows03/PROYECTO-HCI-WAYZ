@@ -1,0 +1,14 @@
+/* ============ W-40 Vía rápida para el cliente honesto ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.via { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-top: 12px; align-items: start; }
+.via .tarjeta { margin-bottom: 14px; }
+.fila { display: flex; gap: 12px; } .fila .campo { flex: 1; }
+.tarjeta .casilla { margin-bottom: 14px; font-size: 8px; }
+.interruptor--fila { display: flex; justify-content: space-between; width: 100%; margin-bottom: 16px; font-size: 8px; font-weight: normal; }
+.total { margin-bottom: 12px; padding: 12px 14px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.total small { display: block; font-size: 7px; color: var(--texto-suave); } .total strong { font-size: 16px; }
+.lista-asegurados { margin: 0; padding: 0; list-style: none; }
+.lista-asegurados li { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; padding: 10px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.lista-asegurados b, .lista-asegurados small { display: block; font-size: 8px; } .lista-asegurados small { margin-top: 2px; font-size: 7px; color: var(--texto-suave); }
+.icono-doc { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: #eef2f8; border-radius: 5px; }
+@media (max-width: 900px) { .via { grid-template-columns: 1fr; } }

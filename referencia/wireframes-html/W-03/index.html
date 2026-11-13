@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Panel del analista</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html" class="activo"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-03/index.html" class="activo">Panel del analista</a>
+            <a href="#">Notificaciones</a>
+        </nav>
+        <div class="pagina">
+            <h1 class="pagina__titulo">Panel del analista</h1>
+
+            <div class="kpis">
+            <div class="kpi"><span>Casos en mi cola</span><strong>18</strong></div>
+            <div class="kpi"><span>Críticos</span><strong>4</strong></div>
+            <div class="kpi"><span>Vencen hoy</span><strong>3</strong></div>
+            <div class="kpi"><span>Nuevos asignados</span><strong>2</strong></div>
+            </div>
+
+            <div class="dos-columnas">
+                <section class="tarjeta">
+                    <h2>Casos priorizados por riesgo</h2>
+                    <table class="tabla">
+                        <thead><tr><th>Caso</th><th>Tipo</th><th>Riesgo</th><th>Urgencia</th><th>Plazo</th></tr></thead>
+                        <tbody>
+                        <tr class="destacada"><td><a href="../W-08/index.html"><b>RCL-2041</b></a></td><td>Vehicular</td><td><span class="etiqueta etiqueta--rojo">Alto</span></td><td><span class="etiqueta etiqueta--rojo">Alta</span></td><td>2 días</td></tr>
+                        <tr><td><a href="../W-08/index.html"><b>RCL-2038</b></a></td><td>Salud</td><td><span class="etiqueta etiqueta--rojo">Alto</span></td><td><span class="etiqueta etiqueta--rojo">Alta</span></td><td>3 días</td></tr>
+                        <tr><td><a href="../W-08/index.html"><b>RCL-2052</b></a></td><td>Hogar</td><td><span class="etiqueta etiqueta--ambar">Medio</span></td><td><span class="etiqueta etiqueta--ambar">Media</span></td><td>6 días</td></tr>
+                        <tr><td><a href="../W-08/index.html"><b>RCL-2047</b></a></td><td>Vida</td><td><span class="etiqueta etiqueta--ambar">Medio</span></td><td><span class="etiqueta etiqueta--ambar">Media</span></td><td>7 días</td></tr>
+                        <tr><td><a href="../W-08/index.html"><b>RCL-2033</b></a></td><td>Vehicular</td><td><span class="etiqueta etiqueta--verde">Bajo</span></td><td><span class="etiqueta etiqueta--verde">Baja</span></td><td>10 días</td></tr>
+                        <tr><td><a href="../W-08/index.html"><b>RCL-2029</b></a></td><td>Salud</td><td><span class="etiqueta etiqueta--verde">Bajo</span></td><td><span class="etiqueta etiqueta--verde">Baja</span></td><td>12 días</td></tr>
+                        </tbody>
+                    </table>
+                    <a class="boton boton--primario boton--abrir" href="../W-08/index.html">Abrir caso seleccionado</a>
+                </section>
+
+                <aside class="tarjeta">
+                    <h2>Notificaciones</h2>
+                    <p class="aviso">Nuevo caso asignado: RCL-2052. Inicia la evaluación.</p>
+                    <p class="aviso aviso--ambar">Alerta: posible red de fraude vinculada a RCL-2038.</p>
+                    <p class="aviso">Plazo próximo a vencer en 2 casos.</p>
+                </aside>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

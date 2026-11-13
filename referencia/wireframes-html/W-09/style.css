@@ -1,0 +1,164 @@
+/* ============ Cabecera del expediente (compartida por W-08, W-09 y W-10) ============ */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado__botones {
+    display: flex;
+    gap: 10px;
+}
+
+/* Etiquetas de estado bajo el título */
+.chips {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 12px;
+}
+
+.chips small {
+    margin-left: auto;
+    font-size: 9px;
+    color: var(--texto-suave);
+}
+
+/* Barra de sub-pestañas: botones con la activa en azul oscuro */
+.subpestanas {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.subpestanas nav {
+    display: flex;
+    flex: 1;
+    gap: 6px;
+}
+
+.subpestanas nav a {
+    flex: 1;
+    padding: 7px 0;
+    font-size: 9.5px;
+    text-align: center;
+    color: var(--etiqueta);
+    text-decoration: none;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+}
+
+.subpestanas nav a.activo {
+    font-weight: bold;
+    color: var(--blanco);
+    background: var(--navy-header);
+}
+
+.boton--ia {
+    height: auto;
+    padding: 0 22px;
+    font-size: 9.5px;
+}
+
+/* ============ W-09 Expediente – Documentos y adjuntos ============ */
+
+.docs {
+    display: grid;
+    grid-template-columns: 1fr 2.4fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.lista-adjuntos {
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-adjuntos li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra-campo);
+}
+
+.lista-adjuntos b,
+.lista-adjuntos small {
+    display: block;
+}
+
+.lista-adjuntos b { font-size: 9px; }
+.lista-adjuntos small { margin-top: 2px; font-size: 8px; color: var(--texto-suave); }
+
+/* Cuadradito de color según el tipo de archivo */
+.icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 26px;
+    height: 26px;
+    font-size: 6.5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.icono--pdf { color: var(--rojo);        background: var(--rojo-suave); }
+.icono--zip { color: var(--ambar-texto); background: var(--ambar-suave); }
+.icono--mp4 { color: var(--azul-grafico); background: #e3ecfd; }
+
+.boton--ancho {
+    width: 100%;
+}
+
+/* Visor del documento */
+.visor__buscar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: 9px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+}
+
+.visor__buscar input {
+    border: none;
+    font: inherit;
+    font-size: 9px;
+    width: 60%;
+}
+
+.visor__hoja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: var(--texto-suave);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 41, 0.07);
+}
+
+.visor small {
+    display: block;
+    margin-top: 5px;
+    font-size: 8px;
+    color: var(--texto-suave);
+}
+
+@media (max-width: 900px) {
+    .docs { grid-template-columns: 1fr; }
+}

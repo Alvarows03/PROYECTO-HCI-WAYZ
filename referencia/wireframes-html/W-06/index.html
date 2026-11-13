@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Bandeja de reclamos</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html" class="activo"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-06/index.html" class="activo">Bandeja</a>
+            <a href="../W-08/index.html">Expediente del caso</a>
+            <a href="../W-16/index.html">Decisión e informe</a>
+        </nav>
+        <div class="pagina">
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Bandeja de reclamos</h1>
+                <a class="boton boton--primario" href="../W-07/index.html">Registrar reclamo</a>
+            </div>
+
+            <form class="filtros" action="#">
+                <input type="search" placeholder="Buscar palabra clave en reclamo y adjuntos">
+                <select><option>Riesgo ▾</option><option>Alto</option><option>Medio</option><option>Bajo</option></select>
+                <select><option>Estado ▾</option><option>Nuevo</option><option>En revisión</option><option>Pendiente</option></select>
+                <select><option>Analista ▾</option></select>
+                <select><option>Fecha ▾</option></select>
+            </form>
+
+            <div class="tabla-y-vista">
+                <section class="tarjeta">
+                    <table class="tabla">
+                        <thead><tr><th>Caso</th><th>Asegurado</th><th>Tipo</th><th>Riesgo</th><th>Urgencia</th><th>Plazo</th><th>Estado</th></tr></thead>
+                        <tbody>
+                            <tr class="destacada"><td><a href="../W-08/index.html"><b>RCL-2041</b></a></td><td>Asegurado A</td><td>Vehicular</td><td><span class="etiqueta etiqueta--rojo">Alto</span></td><td><span class="etiqueta etiqueta--rojo">Alta</span></td><td>2 d</td><td><span class="etiqueta etiqueta--ambar">En revisión</span></td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2038</b></a></td><td>Asegurado B</td><td>Salud</td><td><span class="etiqueta etiqueta--rojo">Alto</span></td><td><span class="etiqueta etiqueta--rojo">Alta</span></td><td>3 d</td><td>Nuevo</td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2052</b></a></td><td>Asegurado C</td><td>Hogar</td><td><span class="etiqueta etiqueta--ambar">Medio</span></td><td><span class="etiqueta etiqueta--ambar">Media</span></td><td>6 d</td><td>Nuevo</td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2047</b></a></td><td>Asegurado D</td><td>Vida</td><td><span class="etiqueta etiqueta--ambar">Medio</span></td><td><span class="etiqueta etiqueta--ambar">Media</span></td><td>7 d</td><td><span class="etiqueta etiqueta--ambar">En revisión</span></td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2033</b></a></td><td>Asegurado E</td><td>Vehicular</td><td><span class="etiqueta etiqueta--verde">Bajo</span></td><td><span class="etiqueta etiqueta--verde">Baja</span></td><td>10 d</td><td><span class="etiqueta etiqueta--ambar">Pendiente</span></td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2029</b></a></td><td>Asegurado F</td><td>Salud</td><td><span class="etiqueta etiqueta--verde">Bajo</span></td><td><span class="etiqueta etiqueta--verde">Baja</span></td><td>12 d</td><td><span class="etiqueta etiqueta--ambar">Pendiente</span></td></tr>
+                            <tr><td><a href="../W-08/index.html"><b>RCL-2025</b></a></td><td>Asegurado G</td><td>Hogar</td><td><span class="etiqueta etiqueta--verde">Bajo</span></td><td><span class="etiqueta etiqueta--verde">Baja</span></td><td>14 d</td><td><span class="etiqueta etiqueta--ambar">Pendiente</span></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <aside class="tarjeta vista-previa">
+                    <h2>Vista previa</h2>
+                    <p class="vista-previa__caso">RCL-2041 · Vehicular</p>
+                    <span class="etiqueta etiqueta--rojo">Riesgo: Alto</span>
+                    <p class="vista-previa__texto">Resumen breve del caso y alertas principales.</p>
+                    <a class="boton boton--primario" href="../W-08/index.html">Abrir expediente</a>
+                </aside>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Calculadora de riesgo de multas y sanciones</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html" class="activo">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Riesgo y paquetes › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Calculadora de multas y sanciones</h1>
+                <a class="boton boton--primario" href="../W-33/index.html">Guardar en el expediente</a>
+            </div>
+            <div class="calculadora">
+                <section class="tarjeta">
+                    <h2>Datos del caso</h2>
+                        <label class="deslizador"><span>Monto reclamado<b>S/ 45 000</b></span><input type="range" min="0" max="100" value="45"></label>
+                        <label class="deslizador"><span>Días de retraso en la respuesta<b>12 días</b></span><input type="range" min="0" max="100" value="38"></label>
+                        <label class="deslizador"><span>Gravedad del incumplimiento<b>Media</b></span><input type="range" min="0" max="100" value="55"></label>
+                        <label class="deslizador"><span>Antecedentes de sanciones<b>2 en 12 meses</b></span><input type="range" min="0" max="100" value="40"></label>
+                </section>
+                <div>
+                    <section class="tarjeta">
+                        <h2>Riesgo estimado de sanción</h2>
+                        <div class="dona"><span>42 %</span></div>
+                    </section>
+                    <section class="tarjeta factores">
+                        <h2>Factores principales</h2>
+                        <p>Retraso en la respuesta</p><div class="progreso"><div style="width: 75%"></div></div>
+                        <p>Antecedentes de sanciones</p><div class="progreso"><div style="width: 38%"></div></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

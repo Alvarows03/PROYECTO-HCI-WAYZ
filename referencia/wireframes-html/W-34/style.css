@@ -1,0 +1,12 @@
+/* ============ W-34 ROI y presupuesto de reservas (indicadores de W-04) ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.graficos { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+.grafico { width: 100%; height: auto; }
+.eje { stroke: #aab4c5; }
+.linea { fill: none; stroke: var(--azul-grafico); stroke-width: 1.6; }
+.puntos circle { fill: var(--blanco); stroke: var(--azul-grafico); stroke-width: 1.2; }
+.nota { margin: 4px 0 0; font-size: 7.5px; color: var(--texto-suave); }
+.barras { display: flex; align-items: flex-end; gap: 22px; height: 130px; padding: 0 16px; border-left: 1px solid #aab4c5; border-bottom: 1px solid #aab4c5; }
+.barra { flex: 1; background: #cbd8ee; border-radius: 3px 3px 0 0; }
+.barra--pico { background: var(--azul-grafico); }
+@media (max-width: 900px) { .graficos { grid-template-columns: 1fr; } }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Historial de decisiones</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html" class="activo"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-18/index.html" class="activo">Registro de decisiones</a>
+            <a href="../W-20/index.html">Consultas</a>
+            <a href="../W-19/index.html">Auditoría</a>
+        </nav>
+        <div class="pagina pagina--relativa">
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Historial de decisiones</h1>
+                <a class="boton boton--primario" href="#exportar">Exportar para auditoría</a>
+            </div>
+            <form class="filtros" action="#">
+                <select><option>Periodo ▾</option></select><select><option>Decisión ▾</option></select><select><option>Analista ▾</option></select>
+                <input type="search" placeholder="Buscar por asegurado o empresa">
+            </form>
+            <div class="historial">
+                <section class="tarjeta">
+                    <table class="tabla">
+                        <thead><tr><th>Caso</th><th>Fecha</th><th>Analista</th><th>Decisión</th><th>Justificación</th></tr></thead>
+                        <tbody>
+                            <tr class="seleccionada"><td><a href="../W-19/index.html">RCL-2041</a></td><td>dd/mm</td><td>Analista 1</td><td><span class="etiqueta etiqueta--rojo">Rechazado</span></td><td>Exclusión expresa</td></tr>
+                            <tr><td><a href="../W-19/index.html">RCL-2038</a></td><td>dd/mm</td><td>Analista 2</td><td><span class="etiqueta etiqueta--verde">Aprobado</span></td><td>Cobertura vigente</td></tr>
+                            <tr><td><a href="../W-19/index.html">RCL-2033</a></td><td>dd/mm</td><td>Analista 1</td><td><span class="etiqueta etiqueta--verde">Aprobado</span></td><td>Sin alertas</td></tr>
+                            <tr><td><a href="../W-19/index.html">RCL-2029</a></td><td>dd/mm</td><td>Analista 3</td><td><span class="etiqueta etiqueta--rojo">Rechazado</span></td><td>Documentos falsos</td></tr>
+                            <tr><td><a href="../W-19/index.html">RCL-2025</a></td><td>dd/mm</td><td>Analista 2</td><td><span class="etiqueta etiqueta--verde">Aprobado</span></td><td>Sin alertas</td></tr>
+                            <tr><td><a href="../W-19/index.html">RCL-2019</a></td><td>dd/mm</td><td>Analista 1</td><td>Derivado</td><td>Caso complejo</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <aside class="tarjeta">
+                    <h2>Casos similares del mismo asegurado</h2>
+                    <p class="caso-similar"><b>RCL-1904</b><small>Aprobado</small></p>
+                    <p class="caso-similar"><b>RCL-1855</b><small>Rechazado</small></p>
+                </aside>
+            </div>
+            <section class="tarjeta exportar" id="exportar">
+                <h2>Exportar para auditoría</h2>
+                <div class="radios"><label><input type="radio" name="fmt" checked> PDF</label><label><input type="radio" name="fmt"> Excel</label></div>
+                <label class="casilla"><input type="checkbox" checked> Incluir bitácora</label>
+                <div class="exportar__fila">
+                    <select><option>Rango: último mes ▾</option><option>Última semana</option><option>Último año</option></select>
+                    <a class="boton boton--primario" href="#">Generar</a>
+                </div>
+            </section>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

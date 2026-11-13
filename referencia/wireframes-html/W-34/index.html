@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - ROI y presupuesto de reservas</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../W-04/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerencia ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html" class="activo">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <div class="encabezado">
+                <h1 class="pagina__titulo">ROI y reservas</h1>
+                <a class="boton" href="../W-35/index.html">Exportar reporte</a>
+            </div>
+            <div class="kpis">
+                <div class="kpi kpi--azul"><span>Costo del sistema</span><strong>S/ 0.0 mil</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Ahorro estimado</span><strong>S/ 0.0 mil</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Retorno (ROI)</span><strong>0 %</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Reserva comprometida</span><strong>S/ 0.0 M</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+            </div>
+            <div class="graficos">
+                <section class="tarjeta">
+                    <h2>Retorno de inversión por mes</h2>
+                    <svg class="grafico" viewBox="0 0 290 110" role="img" aria-label="Línea de retorno de inversión">
+                        <defs><linearGradient id="rel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2563eb" stop-opacity="0.25"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></linearGradient></defs>
+                        <line class="eje" x1="4" x2="290" y1="105" y2="105"/><line class="eje" x1="4" x2="4" y1="2" y2="105"/>
+                        <path d="M10,92 C19,90 45,82 62,78 C79,74 97,67 114,66 C131,65 149,73 166,70 C183,67 201,56 218,48 C235,40 261,28 270,24 L270,105 L10,105 Z" fill="url(#rel)"/>
+                        <path class="linea" d="M10,92 C19,90 45,82 62,78 C79,74 97,67 114,66 C131,65 149,73 166,70 C183,67 201,56 218,48 C235,40 261,28 270,24"/>
+                        <g class="puntos"><circle cx="10" cy="92" r="2.5"/><circle cx="62" cy="78" r="2.5"/><circle cx="114" cy="66" r="2.5"/><circle cx="166" cy="70" r="2.5"/><circle cx="218" cy="48" r="2.5"/><circle cx="270" cy="24" r="2.5"/></g>
+                    </svg>
+                    <p class="nota">Últimos 6 meses</p>
+                </section>
+                <section class="tarjeta">
+                    <h2>Reserva comprometida por estado</h2>
+                    <div class="barras">
+                        <div class="barra barra--pico" style="height: 100%"></div><div class="barra" style="height: 66%"></div>
+                        <div class="barra" style="height: 40%"></div><div class="barra" style="height: 20%"></div>
+                    </div>
+                    <p class="nota">Investigación · Legal · Pago · Cierre</p>
+                </section>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

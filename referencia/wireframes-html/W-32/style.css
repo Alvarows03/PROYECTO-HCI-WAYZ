@@ -1,0 +1,12 @@
+/* ============ W-32 Calculadora de riesgo de multas y sanciones ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.calculadora { display: grid; grid-template-columns: 1.7fr 1fr; gap: 16px; margin-top: 14px; align-items: start; }
+.deslizador { display: block; margin-bottom: 22px; }
+.deslizador span { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 8px; font-weight: bold; }
+.deslizador b { font-weight: normal; }
+.deslizador input { width: 100%; accent-color: var(--azul-oscuro); }
+.dona { position: relative; width: 110px; height: 110px; margin: 6px auto; background: conic-gradient(var(--azul-oscuro) 0 42%, #d4dae4 42% 100%); border-radius: 50%; }
+.dona span { position: absolute; inset: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; background: var(--blanco); border-radius: 50%; }
+.factores { margin-top: 14px; }
+.factores p { margin: 6px 0 4px; font-size: 8px; }
+@media (max-width: 900px) { .calculadora { grid-template-columns: 1fr; } }

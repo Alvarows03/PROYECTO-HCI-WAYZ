@@ -1,0 +1,16 @@
+/* ============ W-18 Historial de decisiones ============ */
+.pagina--relativa { position: relative; }
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.filtros { display: flex; gap: 10px; margin: 12px 0 14px; }
+.filtros input, .filtros select { height: 30px; padding: 0 10px; font: inherit; font-size: 10px; background: var(--blanco);
+    border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.filtros select { width: 100px; } .filtros input { flex: 1; max-width: 300px; }
+.historial { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.caso-similar { margin: 0 0 8px; padding: 10px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; }
+.caso-similar b, .caso-similar small { display: block; font-size: 8.5px; } .caso-similar small { color: var(--texto-suave); }
+/* Ventanita de exportar: flota sobre la tabla, arriba a la derecha */
+.exportar { position: absolute; top: 44px; right: 22px; width: 230px; z-index: 2; }
+.exportar__fila { display: flex; gap: 8px; align-items: center; }
+.exportar__fila select { flex: 1; height: 28px; font: inherit; font-size: 8.5px; border: 1px solid var(--borde); border-radius: 6px; }
+@media (max-width: 900px) { .historial { grid-template-columns: 1fr; } .exportar { position: static; width: auto; margin-top: 14px; } }

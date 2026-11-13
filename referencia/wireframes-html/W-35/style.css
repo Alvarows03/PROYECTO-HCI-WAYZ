@@ -1,0 +1,11 @@
+/* ============ W-35 Benchmarking competitivo (radar) ============ */
+.filtros { display: flex; gap: 10px; margin: 12px 0 14px; }
+.filtros select { width: 120px; height: 30px; padding: 0 10px; font: inherit; font-size: 9px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.radar { display: grid; grid-template-columns: 1fr 1.3fr; gap: 16px; align-items: start; }
+.radar svg { display: block; width: 100%; max-width: 300px; margin: 0 auto; }
+.r-gris { fill: none; stroke: #b6c3dc; stroke-width: 0.8; }
+.r-empresa { fill: none; stroke: var(--azul-grafico); stroke-width: 1.6; }
+.r-sector { fill: none; stroke: var(--azul-grafico); stroke-width: 1; stroke-dasharray: 4 3; }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.nota { margin: 8px 0 0; font-size: 7.5px; color: var(--texto-suave); }
+@media (max-width: 900px) { .radar { grid-template-columns: 1fr; } }

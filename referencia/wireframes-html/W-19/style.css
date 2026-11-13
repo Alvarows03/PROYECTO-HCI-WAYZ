@@ -1,0 +1,10 @@
+/* ============ W-19 Detalle de la decisión y bitácora ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.encabezado__botones { display: flex; gap: 10px; }
+.detalle { display: grid; grid-template-columns: 1fr 2.2fr; gap: 16px; margin-top: 14px; align-items: start; }
+.subtitulo-seccion { margin: 0 0 8px; font-size: 11px; color: var(--azul-oscuro); }
+.datos-v { margin: 0; font-size: 9px; } .datos-v dt { margin-top: 10px; font-size: 7.5px; color: var(--texto-suave); }
+.datos-v dd { margin: 2px 0 0; font-weight: bold; }
+.aviso-punteado { margin: 12px 0 0; padding: 12px; font-size: 8.5px; text-align: center; background: #eef2f8;
+    border: 1.5px dashed var(--borde-error); border-radius: 8px; }
+@media (max-width: 900px) { .detalle { grid-template-columns: 1fr; } }

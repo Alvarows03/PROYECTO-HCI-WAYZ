@@ -1,0 +1,7 @@
+/* ============ W-29 Firma digital del dictamen (ventana) ============ */
+.vista-dictamen { position: relative; height: 110px; margin-bottom: 16px; background: var(--blanco); border: 1px solid var(--borde); }
+.vista-dictamen svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.vista-dictamen line { stroke: #9aa5b8; stroke-width: 0.6; vector-effect: non-scaling-stroke; }
+.vista-dictamen span { position: absolute; top: 50%; left: 50%; padding: 3px 12px; font-size: 7.5px; background: var(--blanco);
+    border: 1px solid var(--borde); border-radius: 4px; transform: translate(-50%, -50%); }
+.campo--medio { width: 60%; }

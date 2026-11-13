@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Expediente – Inconsistencias</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html" class="activo"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-06/index.html">Bandeja</a>
+            <a href="../W-08/index.html" class="activo">Expediente del caso</a>
+            <a href="../W-16/index.html">Decisión e informe</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Reclamos › Expediente del caso › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Expediente RCL-2041</h1>
+                <div class="encabezado__botones">
+                    <a class="boton" href="#">Escalar</a>
+                    <a class="boton boton--primario" href="../W-14/index.html">Decidir</a>
+                </div>
+            </div>
+            <div class="chips">
+                <span class="etiqueta etiqueta--rojo">Riesgo: Alto</span>
+                <span class="etiqueta etiqueta--ambar">Estado: En revisión</span>
+                <span class="etiqueta etiqueta--gris">Plazo: 2 días</span>
+                <small>Asegurado: nombre del asegurado</small>
+            </div>
+            <div class="subpestanas">
+                <nav>
+                    <a href="../W-08/index.html">Resumen</a>
+                    <a href="../W-09/index.html">Documentos</a>
+                    <a href="../W-10/index.html" class="activo">Inconsistencias</a>
+                    <a href="#">Identidad y listas</a>
+                    <a href="#">Similares y redes</a>
+                    <a href="#">Bitácora</a>
+                </nav>
+                <a class="boton boton--ia" href="../W-13/index.html">Asistente IA</a>
+            </div>
+
+            <h2 class="subtitulo-seccion">Se detectaron 4 posibles inconsistencias</h2>
+            <div class="incons">
+                <div>
+                    <ul class="lista-incons">
+                    <li><span class="icono-doc">▤</span><div><b>Fecha del hecho posterior a la denuncia</b><small>Gravedad alta</small></div><span class="etiqueta etiqueta--rojo">Alta</span></li>
+                    <li><span class="icono-doc">▤</span><div><b>Monto reclamado mayor al valor asegurado</b><small>Gravedad alta</small></div><span class="etiqueta etiqueta--rojo">Alta</span></li>
+                    <li><span class="icono-doc">▤</span><div><b>Facturas con importes repetidos</b><small>Gravedad media</small></div><span class="etiqueta etiqueta--ambar">Media</span></li>
+                    <li><span class="icono-doc">▤</span><div><b>Dirección distinta en dos documentos</b><small>Gravedad baja</small></div><span class="etiqueta etiqueta--verde">Baja</span></li>
+                    </ul>
+                    <div class="acciones-incons">
+                        <a class="boton" href="../W-09/index.html">Ver evidencia</a>
+                        <a class="boton" href="#">Marcar revisada</a>
+                    </div>
+                </div>
+
+                <div class="columna-graficos">
+                    <section class="tarjeta">
+                        <h2>Montos facturados por mes</h2>
+                        <div class="barras"><div class="barra" style="height: 30%"></div><div class="barra" style="height: 38%"></div><div class="barra" style="height: 28%"></div><div class="barra barra--pico" style="height: 100%"></div><div class="barra" style="height: 34%"></div><div class="barra" style="height: 32%"></div><div class="barra" style="height: 42%"></div></div>
+                        <small>Pico inusual en el 4.º mes</small>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Fechas clave</h2>
+                        <div class="fechas">
+                            <span></span><span></span><span class="sospechosa"></span><span></span>
+                        </div>
+                        <p class="fechas__texto">Fecha sospechosa</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

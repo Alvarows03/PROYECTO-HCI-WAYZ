@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Reportes regulatorios programados</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente de aseguradora ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html" class="activo">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Gerencia › Reservas y reportes</p>
+            <h1 class="pagina__titulo">Reportes regulatorios</h1>
+            <div class="regulatorios">
+                <div>
+                    <section class="tarjeta">
+                        <table class="tabla">
+                            <thead><tr><th>Reporte</th><th>Regulador</th><th>Periodicidad</th></tr></thead>
+                            <tbody>
+                            <tr class="seleccionada"><td>Siniestros</td><td>SBS</td><td>Mensual</td></tr>
+                            <tr><td>Reclamos</td><td>Indecopi</td><td>Trimestral</td></tr>
+                            <tr><td>Reservas</td><td>SBS</td><td>Mensual</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="aviso-punteado">Envío programado: Siniestros, mensual, día 5.</p>
+                    </section>
+                </div>
+                <form class="tarjeta" action="#">
+                    <h2>Programar envío automático</h2>
+                    <div class="fila">
+                        <label class="campo"><span>Periodicidad</span><select><option>Mensual ▾</option><option>Trimestral</option></select></label>
+                        <label class="campo"><span>Día de envío</span><select><option>Día 5 ▾</option></select></label>
+                    </div>
+                    <label class="campo"><span>Destinatario</span><input type="email" placeholder="correo del regulador"></label>
+                    <label class="campo campo--medio"><span>Formato</span><select><option>PDF ▾</option><option>Excel</option></select></label>
+                    <button type="submit" class="boton boton--primario boton--programar">Programar envío</button>
+                </form>
+            </div>
+            <h2 class="subtitulo-seccion">Estado de los reportes enviados</h2>
+            <section class="tarjeta">
+                <table class="tabla">
+                    <thead><tr><th>Reporte</th><th>Fecha de envío</th><th>Destinatario</th><th>Estado</th></tr></thead>
+                    <tbody>
+                        <tr><td>Siniestros – mes anterior</td><td>dd/mm</td><td>SBS</td><td><span class="etiqueta etiqueta--verde">Enviado</span></td></tr>
+                        <tr><td>Reclamos – trimestre anterior</td><td>dd/mm</td><td>Indecopi</td><td><span class="etiqueta etiqueta--verde">Enviado</span></td></tr>
+                        <tr><td>Reservas – mes en curso</td><td>dd/mm</td><td>SBS</td><td>Programado</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <p class="nota-pie"><a href="../W-34/index.html">← Volver a ROI y reservas</a></p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

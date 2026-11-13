@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Soporte técnico local</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Líder asegurador ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html" class="activo"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-43/index.html">Usuarios y accesos</a>
+            <a href="../W-44/index.html">Reglas del sistema</a>
+            <a href="../W-46/index.html" class="activo">Ayuda y preferencias</a>
+        </nav>
+        <div class="pagina">
+            <h1 class="pagina__titulo">Ayuda y preferencias</h1>
+            <div class="fondo-cards fondo-cards--una"><section class="tarjeta"></section></div>
+        </div>
+        </main>
+    </div>
+
+    <div class="fondo-modal">
+        <section class="modal " role="dialog" aria-labelledby="t45" style="width: min(520px, 92vw)">
+            <div class="modal__titulo">
+                <span id="t45">Soporte técnico local</span>
+                <a class="modal__cerrar modal__cerrar--gris" href="../W-46/index.html" aria-label="Cerrar">×</a>
+            </div>
+            <div class="modal__cuerpo">
+                <div class="contacto">
+                    <section class="tarjeta">
+                        <h2>Llamar</h2>
+                        <p class="telefono">+51 000 000 000</p>
+                        <small>Lun a sáb, 8:00 a 20:00</small>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Escribir ahora</h2>
+                        <a class="boton boton--primario boton--ancho" href="#">Abrir chat de soporte</a>
+                        <small>Respuesta en minutos</small>
+                    </section>
+                </div>
+                <label class="campo"><span>Asunto</span><input type="text" placeholder="Ej.: no puedo abrir un expediente"></label>
+                <label class="campo"><span>Descripción del problema</span><textarea></textarea></label>
+                <div class="modal__acciones">
+                    <a class="boton" href="../W-46/index.html">Cancelar</a>
+                    <a class="boton boton--primario" href="../W-46/index.html">Enviar consulta</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

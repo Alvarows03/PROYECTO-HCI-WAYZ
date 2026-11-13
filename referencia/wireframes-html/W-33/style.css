@@ -1,0 +1,8 @@
+/* ============ W-33 Paquete certificado para SBS e Indecopi ============ */
+.paquete { display: grid; grid-template-columns: 1fr 1.9fr; gap: 16px; margin-top: 12px; align-items: start; }
+.paquete .casilla { margin-bottom: 22px; font-size: 8.5px; }
+.campo--destino { width: 160px; }
+.indice { min-height: 190px; margin-bottom: 12px; }
+.indice p { margin: 0 0 16px; font-size: 8px; }
+.boton--ancho { width: 100%; height: 36px; }
+@media (max-width: 900px) { .paquete { grid-template-columns: 1fr; } }

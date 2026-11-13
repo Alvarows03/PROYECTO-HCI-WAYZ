@@ -1,0 +1,5 @@
+/* ============ W-21 Bandeja legal con plazos (usa los indicadores de W-04) ============ */
+.filtros { display: flex; gap: 10px; margin: 0 0 14px; }
+.filtros select { width: 120px; height: 30px; padding: 0 10px; font: inherit; font-size: 10px; background: var(--blanco);
+    border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }

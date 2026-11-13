@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Benchmarking competitivo (radar)</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente general ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html" class="activo">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <h1 class="pagina__titulo">Benchmarking frente al mercado</h1>
+            <form class="filtros" action="#">
+                <select><option>Periodo: 2026 ▾</option></select><select><option>Ramo: Todos ▾</option></select>
+            </form>
+            <div class="radar">
+                <section class="tarjeta">
+                    <h2>Empresa vs. sector</h2>
+                    <svg viewBox="0 0 200 200" role="img" aria-label="Radar de indicadores"><polygon points="100.0,20.0 30.7,60.0 30.7,140.0 100.0,180.0 169.3,140.0 169.3,60.0" class="r-gris"/><polygon points="100.0,36.0 44.6,68.0 44.6,132.0 100.0,164.0 155.4,132.0 155.4,68.0" class="r-empresa"/><polygon points="100.0,48.0 55.0,74.0 55.0,126.0 100.0,152.0 145.0,126.0 145.0,74.0" class="r-sector"/><polygon points="100.0,62.0 67.1,81.0 67.1,119.0 100.0,138.0 132.9,119.0 132.9,81.0" class="r-gris"/><polygon points="100.0,76.0 79.2,88.0 79.2,112.0 100.0,124.0 120.8,112.0 120.8,88.0" class="r-gris"/></svg>
+                    <p class="nota">Línea continua: empresa · Línea punteada: sector</p>
+                </section>
+                <section class="tarjeta">
+                    <table class="tabla">
+                        <thead><tr><th>Indicador</th><th>Empresa</th><th>Sector</th><th>Brecha</th></tr></thead>
+                        <tbody>
+                        <tr class="seleccionada"><td>Tiempo de respuesta</td><td>0</td><td>0</td><td>–</td></tr>
+                        <tr><td>Detección de fraude</td><td>0</td><td>0</td><td>+</td></tr>
+                        <tr><td>Costo por siniestro</td><td>0</td><td>0</td><td>–</td></tr>
+                        <tr><td>Satisfacción</td><td>0</td><td>0</td><td>+</td></tr>
+                        <tr><td>Ratio de rechazo</td><td>0</td><td>0</td><td>–</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="nota"><a href="../W-36/index.html">Ver peritos y estudios jurídicos →</a></p>
+                </section>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

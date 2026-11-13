@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Paquete certificado para SBS e Indecopi</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html" class="activo">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Riesgo y paquetes › RCL-2041</p>
+            <h1 class="pagina__titulo">Paquete para SBS e Indecopi</h1>
+            <div class="paquete">
+                <section class="tarjeta">
+                    <h2>Documentos del expediente</h2>
+                    <label class="casilla"><input type="checkbox" checked> Informe del siniestro</label>
+                    <label class="casilla"><input type="checkbox" checked> Fotos del vehículo</label>
+                    <label class="casilla"><input type="checkbox" checked> Dictamen firmado</label>
+                    <label class="casilla"><input type="checkbox" checked> Acuse de notificación</label>
+                    <label class="casilla"><input type="checkbox"> Transcripción de llamada</label>
+                    <label class="casilla"><input type="checkbox" checked> Peritaje</label>
+                </section>
+                <div>
+                    <label class="campo campo--destino"><span>Destino</span><select><option>SBS ▾</option><option>Indecopi</option></select></label>
+                    <section class="tarjeta indice">
+                        <h2>Índice del expediente (vista previa)</h2>
+                        <p>1. Informe del siniestro ....... p. 1</p><p>2. Fotos del vehículo ....... p. 6</p>
+                        <p>3. Dictamen firmado ....... p. 14</p><p>4. Acuse de notificación ....... p. 18</p>
+                    </section>
+                    <a class="boton boton--primario boton--ancho" href="../W-22/index.html">Generar Expediente Certificado</a>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

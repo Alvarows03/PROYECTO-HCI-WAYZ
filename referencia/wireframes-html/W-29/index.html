@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Firma digital del dictamen</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html" class="activo">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Evidencia</p>
+            <h1 class="pagina__titulo">Expediente legal RCL-2041</h1>
+            <div class="fondo-cards">
+                <section class="tarjeta"><h2>Plazo legal</h2></section>
+                <section class="tarjeta"></section>
+            </div>
+        </div>
+        </main>
+    </div>
+
+    <div class="fondo-modal">
+        <section class="modal " role="dialog" aria-labelledby="t29" style="width: min(540px, 92vw)">
+            <div class="modal__titulo">
+                <span id="t29">Firmar dictamen – RCL-2041</span>
+                <a class="modal__cerrar modal__cerrar--gris" href="../W-28/index.html" aria-label="Cerrar">×</a>
+            </div>
+            <div class="modal__cuerpo">
+                <div class="vista-dictamen">
+                    <svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="0" x2="100" y2="40"/><line x1="100" y1="0" x2="0" y2="40"/></svg>
+                    <span>Vista previa del dictamen</span>
+                </div>
+                <label class="campo"><span>Certificado digital calificado</span><select><option>Seleccionar certificado ▾</option></select></label>
+                <label class="campo campo--medio"><span>Contraseña del certificado</span><input type="password" value="12345678"></label>
+                <label class="casilla"><input type="checkbox"> Notificar al reclamante después de firmar</label>
+                <div class="modal__acciones">
+                    <a class="boton" href="../W-28/index.html">Cancelar</a>
+                    <a class="boton boton--primario" href="../W-30/index.html">Firmar dictamen</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

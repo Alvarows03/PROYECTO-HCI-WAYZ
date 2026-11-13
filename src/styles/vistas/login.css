@@ -1,0 +1,158 @@
+.v-login .login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+
+.v-login .login__bienvenida {
+  background: var(--fondo-panel);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: var(--sombra-panel);
+  height: 691px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.v-login .login__formulario {
+  width: 100%;
+  max-width: 562px;
+  margin: 0 auto;
+  min-height: 691px;
+  display: flex;
+  flex-direction: column;
+}
+
+.v-login .marca {
+  align-self: flex-start;
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+  font-weight: bold;
+  font-size: clamp(0.875rem, 1.60rem, 2.4rem);
+  padding: 10px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(15, 23, 41, 0.22);
+}
+
+.v-login h1 {
+  margin: 40px 0 0;
+  font-size: clamp(0.875rem, 2.60rem, 2.4rem);
+  color: var(--titulo);
+}
+
+.v-login .subtitulo {
+  margin: 6px 0 30px;
+  font-size: clamp(0.875rem, 1.30rem, 2.4rem);
+  color: var(--texto-suave);
+}
+
+.v-login label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: clamp(0.875rem, 1.20rem, 2.4rem);
+  font-weight: bold;
+  color: var(--etiqueta);
+}
+
+.v-login input[type="email"], .v-login input[type="password"] {
+  width: 100%;
+  min-height: 44px;
+  margin-bottom: 28px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: clamp(0.875rem, 1.30rem, 2.4rem);
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--borde-campo);
+  border-radius: 10px;
+  box-shadow: var(--sombra-campo);
+}
+
+.v-login .opciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  font-size: clamp(0.875rem, 1.26rem, 2.4rem);
+}
+
+.v-login .recordar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: clamp(0.875rem, 1.26rem, 2.4rem);
+  font-weight: normal;
+  color: var(--texto);
+}
+
+.v-login .opciones a {
+  font-weight: bold;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.v-login .opciones a:hover {
+  text-decoration: underline;
+}
+
+.v-login button {
+  width: 100%;
+  min-height: 44px;
+  font: inherit;
+  font-size: clamp(0.875rem, 1.50rem, 2.4rem);
+  font-weight: bold;
+  color: var(--blanco);
+  background: var(--azul-boton);
+  border: none;
+  border-radius: 14px 14px 6px 6px;
+  cursor: pointer;
+}
+
+.v-login button:hover {
+  background: var(--azul-oscuro);
+}
+
+.v-login .error {
+  margin: 20px 0 0;
+  padding: 12px;
+  text-align: center;
+  font-size: clamp(0.875rem, 1.26rem, 2.4rem);
+  background: var(--fondo-panel);
+  border: 1px dashed var(--borde-error);
+  border-radius: 10px;
+  box-shadow: var(--sombra-campo);
+}
+
+.v-login footer {
+  margin-top: auto;
+  padding-top: 30px;
+  text-align: center;
+  font-size: clamp(0.875rem, 1.16rem, 2.4rem);
+  color: var(--texto-suave);
+}
+
+.v-login footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+.v-login .login {
+  grid-template-columns: 1fr;
+  padding: 20px;
+}
+
+.v-login .login__bienvenida {
+  height: 220px;
+}
+
+.v-login .login__formulario {
+  min-height: 0;
+}
+
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Pausar o extender el plazo legal</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html" class="activo">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Evidencia</p>
+            <h1 class="pagina__titulo">Expediente legal RCL-2041</h1>
+            <div class="fondo-cards">
+                <section class="tarjeta"><h2>Plazo legal</h2></section>
+                <section class="tarjeta"></section>
+            </div>
+        </div>
+        </main>
+    </div>
+
+    <div class="fondo-modal">
+        <section class="modal " role="dialog" aria-labelledby="t23" style="width: min(470px, 92vw)">
+            <div class="modal__titulo">
+                <span id="t23">Plazo legal – RCL-2041</span>
+                <a class="modal__cerrar modal__cerrar--gris" href="../W-22/index.html" aria-label="Cerrar">×</a>
+            </div>
+            <div class="modal__cuerpo">
+                <p class="etiqueta-seccion">Acción</p>
+                <div class="radios">
+                    <label><input type="radio" name="acc"> Pausar</label>
+                    <label><input type="radio" name="acc"> Reanudar</label>
+                    <label><input type="radio" name="acc" checked> Extender</label>
+                </div>
+                <label class="campo campo--dias"><span>Días a extender</span><input type="number" value="5" min="1"></label>
+                <label class="campo"><span>Justificación (obligatoria)</span><textarea placeholder="Explica el motivo del cambio de plazo…" required></textarea></label>
+                <p class="nota-pie">Nuevo vencimiento: dd/mm/aaaa (35 días en total)</p>
+                <div class="modal__acciones">
+                    <a class="boton" href="../W-22/index.html">Cancelar</a>
+                    <a class="boton boton--primario" href="../W-22/index.html">Aplicar</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

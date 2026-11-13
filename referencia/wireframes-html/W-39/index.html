@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Aprobación automática de siniestros menores</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../W-04/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente de operaciones ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html" class="activo">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Gerencia › Automatización y cliente</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Aprobación automática</h1>
+                <a class="boton boton--primario" href="#">Guardar cambios</a>
+            </div>
+            <label class="interruptor interruptor--fila">Aprobar siniestros menores automáticamente <input type="checkbox" checked></label>
+            <div class="reglas-sim">
+                <section class="tarjeta">
+                    <h2>Reglas</h2>
+                    <label class="campo campo--medio"><span>Monto máximo</span><input type="text" value="S/ 2 000"></label>
+                    <p class="rotulo">Ramos permitidos</p>
+                    <div class="fila-casillas">
+                        <label class="casilla"><input type="checkbox" checked> Vehicular</label>
+                        <label class="casilla"><input type="checkbox" checked> Hogar</label>
+                        <label class="casilla"><input type="checkbox"> Salud</label>
+                    </div>
+                    <p class="rotulo">Condiciones obligatorias</p>
+                    <label class="casilla"><input type="checkbox" checked> Sin alertas de riesgo</label>
+                    <label class="casilla"><input type="checkbox" checked> Sin inconsistencias de datos</label>
+                    <label class="casilla"><input type="checkbox" checked> Identidad verificada</label>
+                </section>
+                <section>
+                    <h2 class="subtitulo-seccion">Simulación</h2>
+                    <div class="kpi kpi--azul"><span>Casos que cumplirían</span><strong>128 / mes</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                    <div class="kpi kpi--azul"><span>Ahorro operativo estimado</span><strong>S/ 0.0 mil</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                    <p class="nota-pie">Estos casos se aprobarían sin pasar por la bandeja de los analistas.</p>
+                    <p class="nota-pie"><a href="../W-40/index.html">Ir a «Vía rápida para el cliente honesto» →</a></p>
+                </section>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

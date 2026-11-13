@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Detalle de la decisión y bitácora</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Auditor ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html" class="activo"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-18/index.html">Registro de decisiones</a>
+            <a href="../W-20/index.html">Consultas</a>
+            <a href="../W-19/index.html" class="activo">Auditoría</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Historial › Auditoría › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Decisión del caso RCL-2041</h1>
+                <div class="encabezado__botones">
+                    <a class="boton" href="../W-18/index.html">Volver al historial</a>
+                    <a class="boton boton--primario" href="../W-08/index.html">Abrir expediente</a>
+                </div>
+            </div>
+            <div class="detalle">
+                <section class="tarjeta">
+                    <h2>Decisión</h2>
+                    <dl class="datos-v">
+                        <dt>Caso</dt><dd>RCL-2041</dd><dt>Analista</dt><dd>Analista 1</dd><dt>Fecha</dt><dd>dd/mm/aaaa</dd>
+                        <dt>Resultado</dt><dd>Rechazado</dd><dt>Justificación</dt><dd>Exclusión expresa, cláusula 4.2</dd>
+                    </dl>
+                </section>
+                <div>
+                    <h2 class="subtitulo-seccion">Bitácora de acciones</h2>
+                    <section class="tarjeta">
+                        <table class="tabla">
+                            <thead><tr><th>Fecha y hora</th><th>Usuario</th><th>Acción</th></tr></thead>
+                            <tbody>
+                        <tr><td>dd/mm hh:mm</td><td>Analista 1</td><td>Abrió el expediente</td></tr>
+                        <tr><td>dd/mm hh:mm</td><td>Analista 1</td><td>Consultó listas</td></tr>
+                        <tr><td>dd/mm hh:mm</td><td>Analista 1</td><td>Registró decisión</td></tr>
+                        <tr><td>dd/mm hh:mm</td><td>Sistema</td><td>Notificó a Legal</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <p class="aviso-punteado">Registro protegido: no puede modificarse</p>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

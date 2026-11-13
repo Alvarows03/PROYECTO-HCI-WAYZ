@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Causal de exclusión de la póliza</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html" class="activo">Dictamen y plazos</a>
+            <a href="../W-31/index.html">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Dictamen y plazos › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Causal de exclusión</h1>
+                <a class="boton boton--primario" href="../W-29/index.html">Ir a la firma</a>
+            </div>
+            <div class="causal">
+                <section class="tarjeta">
+                    <h2>Evidencias del caso</h2>
+                    <label class="casilla"><input type="checkbox" checked> Facturas con importes repetidos</label>
+                    <label class="casilla"><input type="checkbox" checked> Documento adulterado</label>
+                    <label class="casilla"><input type="checkbox"> Fecha posterior a la denuncia</label>
+                </section>
+                <a class="boton boton--primario boton--relacionar" href="#">Relacionar ›</a>
+                <section class="tarjeta">
+                    <h2>Exclusiones de la póliza</h2>
+                    <label class="casilla"><input type="radio" name="exc"> 4.1 Dolo del asegurado</label>
+                    <label class="casilla"><input type="radio" name="exc" checked> 4.2 Documentación adulterada</label>
+                    <label class="casilla"><input type="radio" name="exc"> 4.5 Hechos no declarados</label>
+                </section>
+            </div>
+            <p class="causal-ok">Causal identificada: cláusula 4.2, expresa y vinculada a 2 evidencias.</p>
+            <p class="advertencia">Advertencia: la cláusula 4.5 es ambigua. No se recomienda rechazar con ella.</p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

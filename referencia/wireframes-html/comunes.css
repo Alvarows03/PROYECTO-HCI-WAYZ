@@ -1,0 +1,81 @@
+/* ============================================
+   comunes.css  ->  estilos compartidos por TODAS las pantallas
+   Cada pantalla lo enlaza con:
+   <link rel="stylesheet" href="../comunes.css">
+   ============================================ */
+
+/* Variables: se escriben UNA vez y se usan con var(--nombre) */
+:root {
+    --azul-oscuro: #1d3557;                 /* titulos y marca */
+    --azul-boton: rgba(29, 53, 87, 0.85);   /* botones principales */
+    --texto: #1e293b;
+    --texto-suave: #475569;
+    --etiqueta: #334155;
+    --borde: #e2e8f0;
+    --borde-error: #94a3b8;
+    --fondo-panel: #f8fafc;
+    --blanco: #ffffff;
+
+    /* Colores de la aplicación interna (W-03 en adelante) */
+    --navy-header: #1b2f55;
+    --navy-lateral: #15294d;
+    --navy-activo: #2b4268;
+    --ambar: #e9a52f;
+    --ambar-suave: #fdf1d6;
+    --ambar-texto: #a86a05;
+    --rojo: #d64545;
+    --rojo-suave: #fde6e6;
+    --verde: #2f855a;
+    --verde-suave: #dcf3e4;
+    --fondo-app: #f1f4f9;
+    --azul-grafico: #2563eb;
+
+    --sombra-campo: 0 4px 12px rgba(15, 23, 41, 0.05), 0 1px 3px rgba(15, 23, 41, 0.07);
+    --sombra-panel: 0 2px 6px rgba(15, 23, 41, 0.08), 0 10px 30px rgba(15, 23, 41, 0.16);
+}
+
+/* Reinicio basico: quita el margen que el navegador pone por defecto */
+* {
+    box-sizing: border-box; /* el ancho incluye padding y borde */
+}
+
+body {
+    margin: 0;
+    font-family: Carlito, Calibri, Arial, sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+}
+
+/* ---------- Botones (sirven en todas las pantallas) ----------
+   Uso:  <a class="boton boton--primario" href="...">Texto</a>
+         <button class="boton">Texto</button>               */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 34px;
+    padding: 0 18px;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    background: var(--blanco);
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: #eef2f8;
+}
+
+.boton--primario {
+    color: var(--blanco);
+    background: var(--azul-oscuro);
+}
+
+.boton--primario:hover {
+    background: #274a78;
+}

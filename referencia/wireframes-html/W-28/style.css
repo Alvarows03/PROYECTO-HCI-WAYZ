@@ -1,0 +1,9 @@
+/* ============ W-28 Causal de exclusión de la póliza ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.causal { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; margin: 14px 0; }
+.causal .tarjeta { min-height: 180px; }
+.causal .casilla { margin-bottom: 26px; font-size: 8.5px; }
+.boton--relacionar { height: 28px; font-size: 8.5px; }
+.causal-ok { margin: 0 0 10px; padding: 12px 14px; font-size: 8.5px; font-weight: bold; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra-campo); }
+.advertencia { margin: 0; padding: 12px 14px; font-size: 8.5px; background: var(--blanco); border: 1.5px dashed var(--borde-error); border-radius: 8px; }
+@media (max-width: 900px) { .causal { grid-template-columns: 1fr; } }
