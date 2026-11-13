@@ -1,0 +1,11 @@
+/* ============ W-26 Contrato traducido en pantalla dividida ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.idiomas { display: flex; align-items: center; gap: 12px; margin: 12px 0; }
+.idiomas select { width: 120px; height: 28px; padding: 0 8px; font: inherit; font-size: 9px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; }
+.idiomas .casilla { margin: 0; font-size: 8.5px; }
+.contrato { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.rotulo { margin: 0 0 6px; font-size: 8.5px; color: var(--etiqueta); }
+.texto-contrato { height: 330px; overflow: auto; }
+.texto-contrato h3 { margin: 0 0 4px; font-size: 9px; }
+.texto-contrato p { margin: 0 0 4px; font-size: 7.5px; line-height: 1.4; }
+@media (max-width: 900px) { .contrato { grid-template-columns: 1fr; } }

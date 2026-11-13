@@ -1,0 +1,190 @@
+/* ============ Cabecera del expediente (compartida por W-08, W-09 y W-10) ============ */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado__botones {
+    display: flex;
+    gap: 10px;
+}
+
+/* Etiquetas de estado bajo el título */
+.chips {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 12px;
+}
+
+.chips small {
+    margin-left: auto;
+    font-size: 9px;
+    color: var(--texto-suave);
+}
+
+/* Barra de sub-pestañas: botones con la activa en azul oscuro */
+.subpestanas {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.subpestanas nav {
+    display: flex;
+    flex: 1;
+    gap: 6px;
+}
+
+.subpestanas nav a {
+    flex: 1;
+    padding: 7px 0;
+    font-size: 9.5px;
+    text-align: center;
+    color: var(--etiqueta);
+    text-decoration: none;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+}
+
+.subpestanas nav a.activo {
+    font-weight: bold;
+    color: var(--blanco);
+    background: var(--navy-header);
+}
+
+.boton--ia {
+    height: auto;
+    padding: 0 22px;
+    font-size: 9.5px;
+}
+
+/* ============ W-10 Expediente – Inconsistencias ============ */
+
+.subtitulo-seccion {
+    margin: 0 0 10px;
+    font-size: 11px;
+    color: var(--azul-oscuro);
+}
+
+.incons {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.lista-incons {
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-incons li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 9px 12px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra-campo);
+}
+
+.lista-incons li div { flex: 1; }
+.lista-incons b, .lista-incons small { display: block; }
+.lista-incons b { font-size: 9px; }
+.lista-incons small { margin-top: 2px; font-size: 8px; color: var(--texto-suave); }
+
+.icono-doc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--etiqueta);
+    background: #eef2f8;
+    border-radius: 5px;
+}
+
+.acciones-incons {
+    display: flex;
+    gap: 10px;
+}
+
+.columna-graficos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Gráfico de barras con CSS: cada barra es un div con altura en % */
+.barras {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 130px;
+    padding: 0 6px;
+    border-left: 1px solid #aab4c5;
+    border-bottom: 1px solid #aab4c5;
+}
+
+.barra {
+    flex: 1;
+    background: #cbd8ee;
+    border-radius: 3px 3px 0 0;
+}
+
+.barra--pico { background: var(--azul-grafico); }
+
+.tarjeta small {
+    display: block;
+    margin-top: 6px;
+    font-size: 8px;
+    color: var(--texto-suave);
+}
+
+/* Línea de tiempo con 4 puntos */
+.fechas {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 10px 8px;
+}
+
+.fechas::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    height: 2px;
+    background: #aab4c5;
+}
+
+.fechas span {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: var(--blanco);
+    border: 1.5px solid var(--etiqueta);
+    border-radius: 50%;
+}
+
+.fechas .sospechosa { background: var(--azul-oscuro); }
+
+.fechas__texto {
+    margin: 0;
+    font-size: 8.5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .incons { grid-template-columns: 1fr; }
+}

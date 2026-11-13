@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Encuesta de satisfacción</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente de experiencia ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html" class="activo">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Gerencia › Automatización y cliente</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Encuesta de satisfacción</h1>
+                <a class="boton boton--primario" href="#">Guardar</a>
+            </div>
+            <div class="encuesta">
+                <div>
+                    <section class="tarjeta">
+                        <h2>Envío</h2>
+                        <div class="fila fila--envio">
+                            <label class="campo"><span>Cuándo enviar</span><select><option>Al resolver el reclamo ▾</option></select></label>
+                            <label class="casilla"><input type="checkbox" checked> Correo</label>
+                            <label class="casilla"><input type="checkbox"> SMS</label>
+                        </div>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Preguntas</h2>
+                        <label class="campo"><input type="text" value="¿Qué tan rápido resolvimos tu reclamo?"></label>
+                        <label class="campo"><input type="text" value="¿Recomendarías a la aseguradora?"></label>
+                        <label class="campo"><input type="text" value="Comentarios (opcional)"></label>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Vista previa</h2>
+                        <p class="estrellas">★★★★★ <small>Califica la rapidez de tu atención</small></p>
+                    </section>
+                </div>
+                <div>
+                    <section class="tarjeta">
+                        <h2>Satisfacción general</h2>
+                        <div class="dona"><span>4,5</span></div>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Evolución mensual</h2>
+                        <svg class="grafico" viewBox="0 0 280 90" role="img" aria-label="Evolución mensual de la satisfacción">
+                            <defs><linearGradient id="relS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2563eb" stop-opacity="0.25"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></linearGradient></defs>
+                            <line class="eje" x1="4" x2="280" y1="86" y2="86"/><line class="eje" x1="4" x2="4" y1="2" y2="86"/>
+                            <path d="M8,62 C17,61 43,58 60,56 C77,54 95,52 112,52 C129,52 147,57 164,55 C181,53 199,44 216,40 C233,36 259,35 268,34 L268,86 L8,86 Z" fill="url(#relS)"/><path class="linea" d="M8,62 C17,61 43,58 60,56 C77,54 95,52 112,52 C129,52 147,57 164,55 C181,53 199,44 216,40 C233,36 259,35 268,34"/><g class="puntos"><circle cx="8" cy="62" r="2.5"/><circle cx="60" cy="56" r="2.5"/><circle cx="112" cy="52" r="2.5"/><circle cx="164" cy="55" r="2.5"/><circle cx="216" cy="40" r="2.5"/><circle cx="268" cy="34" r="2.5"/></g>
+                        </svg>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

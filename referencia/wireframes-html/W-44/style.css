@@ -1,0 +1,14 @@
+/* ============ W-44 Reglas del sistema ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.reglas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 12px; align-items: start; }
+.reglas .tarjeta { margin-bottom: 14px; }
+.deslizador { display: block; margin-bottom: 22px; }
+.deslizador span { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 8px; font-weight: bold; }
+.deslizador b { font-weight: normal; font-size: 7px; }
+.deslizador input { width: 100%; accent-color: var(--azul-oscuro); }
+.deslizador small { display: block; margin-top: 4px; font-size: 6.5px; color: var(--texto-suave); }
+.deslizador--fila { display: flex; align-items: center; gap: 14px; } .deslizador--fila span { margin: 0; }
+.deslizador--fila input { flex: 1; }
+.interruptor--fila { display: flex; justify-content: space-between; width: 100%; margin-bottom: 18px; font-size: 8px; font-weight: normal; }
+.reglas .casilla { margin-bottom: 12px; font-size: 8px; }
+@media (max-width: 900px) { .reglas { grid-template-columns: 1fr; } }

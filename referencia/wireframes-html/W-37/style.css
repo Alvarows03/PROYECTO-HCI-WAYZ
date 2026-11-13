@@ -1,0 +1,8 @@
+/* ============ W-37 Seguimiento SCTR y Vida en tiempo real (indicadores de W-04) ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.encabezado small { font-size: 8px; color: var(--texto-suave); }
+.kpis { grid-template-columns: repeat(3, 1fr); }
+.segmentos { display: flex; margin-bottom: 10px; }
+.segmentos .boton { width: 56px; height: 26px; padding: 0; font-size: 8.5px; border-radius: 0; }
+.segmentos .boton:first-child { border-radius: 6px 0 0 6px; } .segmentos .boton:last-child { border-radius: 0 6px 6px 0; }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }

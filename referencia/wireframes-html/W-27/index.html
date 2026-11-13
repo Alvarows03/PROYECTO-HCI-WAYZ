@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Mapa de calor de cláusulas</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html" class="activo">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Contratos</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Mapa de calor – contrato traducido</h1>
+                <a class="boton" href="../W-26/index.html">Volver a la traducción</a>
+            </div>
+            <div class="filtros-nivel">
+                <a class="boton" href="#">Todos</a><a class="boton boton--primario" href="#">Alto</a><a class="boton" href="#">Medio</a><a class="boton" href="#">Bajo</a>
+            </div>
+            <div class="mapa">
+                <section class="tarjeta">
+                        <div class="clausula"><span>Cláusula 1</span><div class="barra-cl barra-cl--alto"></div></div>
+                        <div class="clausula"><span>Cláusula 2</span><div class="barra-cl barra-cl--bajo"></div></div>
+                        <div class="clausula"><span>Cláusula 3</span><div class="barra-cl barra-cl--medio"></div></div>
+                        <div class="clausula"><span>Cláusula 4</span><div class="barra-cl barra-cl--bajo"></div></div>
+                        <div class="clausula"><span>Cláusula 5</span><div class="barra-cl barra-cl--alto"></div></div>
+                        <div class="clausula"><span>Cláusula 6</span><div class="barra-cl barra-cl--medio"></div></div>
+                    <div class="leyenda"><span><i class="barra-cl--alto"></i> Alto</span><span><i class="barra-cl--medio"></i> Medio</span><span><i class="barra-cl--bajo"></i> Bajo</span></div>
+                </section>
+                <aside class="tarjeta">
+                    <h2>Cláusula 1 seleccionada</h2>
+                    <p><span class="etiqueta etiqueta--gris">Ambigüedad: Alta</span></p>
+                    <p class="detalle">Motivo: el término «pérdida total» puede interpretarse de dos maneras según la legislación local.</p>
+                    <p class="detalle"><b>Referencia legal</b></p>
+                    <p class="aviso-punteado">Norma local aplicable (enlace)</p>
+                </aside>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

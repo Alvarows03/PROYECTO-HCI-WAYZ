@@ -1,0 +1,18 @@
+/* ============ W-13 Asistente de póliza (panel lateral) ============ */
+.datos-lista { margin: 0; padding-left: 16px; font-size: 8.5px; line-height: 1.5; }
+/* Panel fijo pegado a la derecha, debajo de la cabecera */
+.asistente { position: fixed; top: 58px; right: 0; bottom: 0; width: min(380px, 100vw); display: flex; flex-direction: column;
+    background: var(--blanco); box-shadow: -4px 0 18px rgba(15, 23, 41, 0.18); z-index: 5; }
+.asistente__titulo { display: flex; justify-content: space-between; align-items: center; padding: 0 12px; height: 40px;
+    font-size: 11px; font-weight: bold; color: var(--blanco); background: var(--navy-header); }
+.asistente__chat { flex: 1; padding: 14px 16px; overflow: auto; }
+.sugerencias { display: flex; gap: 8px; margin-bottom: 18px; }
+.sugerencias a { flex: 1; padding: 6px 4px; font-size: 8px; text-align: center; color: var(--etiqueta); text-decoration: none;
+    background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; }
+.burbuja { margin: 0 0 14px; padding: 12px 14px; font-size: 9px; border-radius: 10px; }
+.burbuja--usuario { margin-left: 25%; color: var(--blanco); background: var(--navy-header); }
+.burbuja--ia { width: 82%; background: var(--blanco); border: 1px solid var(--borde); box-shadow: var(--sombra-campo); }
+.fuente { width: 70%; margin: 0; padding: 10px; font-size: 8.5px; font-weight: bold; text-align: center;
+    background: var(--ambar-suave); border: 1.5px dashed var(--borde-error); border-radius: 6px; }
+.asistente__entrada { display: flex; gap: 8px; padding: 12px; }
+.asistente__entrada input { flex: 1; height: 32px; padding: 0 10px; font: inherit; font-size: 9px; border: 1px solid var(--borde); border-radius: 8px; }

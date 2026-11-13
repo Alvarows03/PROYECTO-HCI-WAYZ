@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Expediente – Identidad y listas de control</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../W-08/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html" class="activo"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-06/index.html">Bandeja</a>
+            <a href="../W-08/index.html" class="activo">Expediente del caso</a>
+            <a href="../W-16/index.html">Decisión e informe</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Reclamos › Expediente del caso › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Expediente RCL-2041</h1>
+                <div class="encabezado__botones">
+                    <a class="boton" href="../W-15/index.html">Escalar</a>
+                    <a class="boton boton--primario" href="../W-14/index.html">Decidir</a>
+                </div>
+            </div>
+            <div class="chips">
+                <span class="etiqueta etiqueta--rojo">Riesgo: Alto</span>
+                <span class="etiqueta etiqueta--ambar">Estado: En revisión</span>
+                <span class="etiqueta etiqueta--gris">Plazo: 2 días</span>
+                <small>Asegurado: nombre del asegurado</small>
+            </div>
+            <div class="subpestanas">
+                <nav>
+                    <a href="../W-08/index.html">Resumen</a>
+                    <a href="../W-09/index.html">Documentos</a>
+                    <a href="../W-10/index.html">Inconsistencias</a>
+                    <a href="../W-11/index.html" class="activo">Identidad y listas</a>
+                    <a href="../W-12/index.html">Similares y redes</a>
+                    <a href="../W-17/index.html">Bitácora</a>
+                </nav>
+                <a class="boton boton--ia" href="../W-13/index.html">Asistente IA</a>
+            </div>
+
+            <div class="identidad">
+                <section class="tarjeta">
+                    <h2>Verificación de identidad</h2>
+                    <dl class="datos">
+                        <dt>Documento</dt><dd>DNI 7XXXXXXX</dd>
+                        <dt>Nombre oficial</dt><dd>Coincide</dd>
+                        <dt>Estado</dt><dd>Vigente</dd>
+                    </dl>
+                    <p><span class="etiqueta etiqueta--gris">Identidad confirmada</span></p>
+                    <a class="boton" href="#">Volver a consultar</a>
+                </section>
+                <div>
+                    <section class="tarjeta">
+                        <h2>Cruce con listas de sancionados y lavado de activos</h2>
+                        <table class="tabla">
+                            <thead><tr><th>Persona</th><th>Rol</th><th>Lista consultada</th><th>Resultado</th></tr></thead>
+                            <tbody>
+                                <tr><td>Reclamante</td><td>Titular</td><td>UIF · OFAC</td><td>Sin coincidencia</td></tr>
+                                <tr><td>Beneficiario 1</td><td>Cónyuge</td><td>UIF · OFAC</td><td>Sin coincidencia</td></tr>
+                                <tr class="seleccionada"><td>Beneficiario 2</td><td>Tercero</td><td>UIF · OFAC</td><td>Coincidencia posible</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <p class="aviso-punteado">Coincidencia posible con Beneficiario 2. Revisar antes de continuar.</p>
+                    <a class="boton boton--derecha" href="../W-15/index.html">Escalar caso</a>
+                </div>
+            </div>
+            <section class="tarjeta">
+                <h2>Fuentes consultadas</h2>
+                <p class="resumen">Servicio oficial de identidad · Listas de personas expuestas y sancionadas. Última consulta: dd/mm/aaaa hh:mm.</p>
+            </section>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

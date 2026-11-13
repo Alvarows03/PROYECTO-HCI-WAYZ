@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Reglas del sistema</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Administrador ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html" class="activo"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-43/index.html">Usuarios y accesos</a>
+            <a href="../W-44/index.html" class="activo">Reglas del sistema</a>
+            <a href="../W-46/index.html">Ayuda y preferencias</a>
+        </nav>
+        <div class="pagina">
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Reglas del sistema</h1>
+                <a class="boton boton--primario" href="../W-04/index.html">Guardar cambios</a>
+            </div>
+            <div class="reglas">
+                <section class="tarjeta">
+                    <h2>Recalibración de reglas</h2>
+                    <label class="deslizador"><span>Montos atípicos<b>12 falsas alarmas</b></span><input type="range" min="0" max="100" value="60"><small>Sensibilidad: menos alertas ◄—► más alertas</small></label>
+                    <label class="deslizador"><span>Fechas sospechosas<b>5 falsas alarmas</b></span><input type="range" min="0" max="100" value="40"><small>Sensibilidad: menos alertas ◄—► más alertas</small></label>
+                    <label class="deslizador"><span>Documentos repetidos<b>9 falsas alarmas</b></span><input type="range" min="0" max="100" value="65"><small>Sensibilidad: menos alertas ◄—► más alertas</small></label>
+                </section>
+                <div>
+                    <section class="tarjeta">
+                        <h2>Fuentes de verificación</h2>
+                        <label class="interruptor interruptor--fila">Consulta de DNI/RUC (servicio oficial) <input type="checkbox" checked></label>
+                        <label class="interruptor interruptor--fila">Listas de sancionados (UIF, OFAC) <input type="checkbox" checked></label>
+                        <label class="interruptor interruptor--fila">Consulta automática al registrar <input type="checkbox"></label>
+                    </section>
+                    <section class="tarjeta">
+                        <h2>Alertas sonoras</h2>
+                        <label class="deslizador deslizador--fila"><span>Volumen</span><input type="range" min="0" max="100" value="40"></label>
+                        <label class="casilla"><input type="checkbox" checked> Pico de siniestros</label>
+                        <label class="casilla"><input type="checkbox" checked> Fraude organizado</label>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

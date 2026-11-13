@@ -1,0 +1,72 @@
+/* ============ W-06 Bandeja de reclamos ============ */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Fila de filtros: el buscador crece, los desplegables tienen ancho fijo */
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0 14px;
+}
+
+.filtros input {
+    flex: 1;
+    max-width: 300px;
+}
+
+.filtros input,
+.filtros select {
+    height: 30px;
+    padding: 0 10px;
+    font: inherit;
+    font-size: 10px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra-campo);
+}
+
+.filtros select {
+    width: 100px;
+}
+
+/* Tabla (ancha) + panel de vista previa (angosto) */
+.tabla-y-vista {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.vista-previa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 320px;
+}
+
+.vista-previa__caso {
+    margin: 0 0 8px;
+    font-size: 10.5px;
+    font-weight: bold;
+}
+
+.vista-previa__texto {
+    margin: 12px 0 0;
+    font-size: 9px;
+    color: var(--texto-suave);
+}
+
+.vista-previa .boton {
+    width: 100%;
+    margin-top: auto;               /* se pega al fondo de la tarjeta */
+}
+
+@media (max-width: 900px) {
+    .tabla-y-vista { grid-template-columns: 1fr; }
+    .filtros { flex-wrap: wrap; }
+}

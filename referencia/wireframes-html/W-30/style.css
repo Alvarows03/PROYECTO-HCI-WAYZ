@@ -1,0 +1,3 @@
+/* ============ W-30 Notificaciones y acuses de recibo (indicadores de W-04) ============ */
+.kpis { grid-template-columns: repeat(3, 1fr); }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }

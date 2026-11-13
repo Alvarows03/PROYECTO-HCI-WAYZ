@@ -1,0 +1,13 @@
+/* ============ W-16 Informe con plantilla editable ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.encabezado__botones { display: flex; gap: 10px; }
+.informe { display: grid; grid-template-columns: 1fr 2.3fr 1fr; gap: 14px; margin-top: 12px; align-items: start; }
+.estructura { margin: 0; padding: 0; list-style: none; }
+.estructura li { margin-bottom: 8px; padding: 8px 10px; font-size: 9px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; }
+.estructura li.activo { color: var(--blanco); background: var(--navy-header); font-weight: bold; }
+.barra-editor { display: flex; gap: 6px; margin-bottom: 10px; }
+.barra-editor > * { width: 22px; height: 20px; font-size: 9px; line-height: 20px; text-align: center; border: 1px solid var(--borde); border-radius: 4px; }
+.editor p { margin: 0; font-size: 8.5px; line-height: 1.45; }
+.datos { display: grid; grid-template-columns: 60px 1fr; gap: 12px 8px; margin: 0; font-size: 8.5px; }
+.datos dt { color: var(--texto-suave); } .datos dd { margin: 0; font-weight: bold; }
+@media (max-width: 900px) { .informe { grid-template-columns: 1fr; } }

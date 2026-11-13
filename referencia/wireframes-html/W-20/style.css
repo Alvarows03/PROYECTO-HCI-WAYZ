@@ -1,0 +1,11 @@
+/* ============ W-20 Consulta avanzada de datos (SQL) ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.encabezado__botones { display: flex; gap: 10px; }
+.encabezado--resultados { margin: 14px 0 8px; }
+.sql { display: grid; grid-template-columns: 1fr 3.4fr; gap: 16px; margin-top: 12px; align-items: start; }
+.lista-tablas { margin: 0; padding: 0; list-style: none; }
+.lista-tablas li { margin-bottom: 8px; padding: 8px 10px; font-size: 9px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; }
+.editor-sql { width: 100%; height: 110px; padding: 12px 14px; font: 9px/1.7 Consolas, "Courier New", monospace; color: var(--texto);
+    background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; box-shadow: 0 2px 8px rgba(15, 23, 41, 0.07); resize: vertical; }
+.subtitulo-seccion { margin: 0; font-size: 10px; color: var(--azul-oscuro); }
+@media (max-width: 900px) { .sql { grid-template-columns: 1fr; } }

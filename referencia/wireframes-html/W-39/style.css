@@ -1,0 +1,11 @@
+/* ============ W-39 Aprobación automática de siniestros menores (indicadores de W-04) ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.interruptor--fila { margin: 14px 0; font-size: 8.5px; }
+.reglas-sim { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+.campo--medio { width: 60%; }
+.rotulo { margin: 8px 0; font-size: 7.5px; font-weight: bold; color: var(--etiqueta); }
+.fila-casillas { display: flex; gap: 30px; margin-bottom: 8px; }
+.tarjeta .casilla { font-size: 8px; margin-bottom: 14px; }
+.subtitulo-seccion { margin: 0 0 8px; font-size: 9px; color: var(--azul-oscuro); }
+.reglas-sim .kpi { margin-bottom: 12px; padding: 14px 16px; }
+@media (max-width: 900px) { .reglas-sim { grid-template-columns: 1fr; } }

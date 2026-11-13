@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Registrar reclamo</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html" class="activo"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-06/index.html" class="activo">Bandeja</a>
+            <a href="../W-08/index.html">Expediente del caso</a>
+            <a href="../W-16/index.html">Decisión e informe</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Reclamos › Bandeja › Nuevo</p>
+            <h1 class="pagina__titulo">Registrar reclamo</h1>
+
+            <form class="formulario" action="../W-06/index.html">
+                <section class="tarjeta">
+                    <h2>1. Datos del reclamante</h2>
+                    <div class="fila">
+                        <label class="campo campo--corto"><span>Documento</span>
+                            <select><option>DNI</option><option>RUC</option><option>CE</option></select></label>
+                        <label class="campo"><span>N.º de documento</span><input type="text" placeholder="7XXXXXXX"></label>
+                        <button type="button" class="boton boton--verificar">Verificar</button>
+                    </div>
+                    <p class="verificado">Identidad verificada: nombre y estado coinciden</p>
+                    <label class="campo"><span>Nombre completo</span><input type="text" placeholder="Nombre del reclamante"></label>
+                    <div class="fila">
+                        <label class="campo"><span>Correo electrónico</span><input type="email" class="invalido" placeholder="correo@"></label>
+                        <label class="campo campo--corto"><span>Teléfono</span><input type="tel" placeholder="9XXXXXXXX"></label>
+                    </div>
+                    <p class="error-campo">Formato de correo no válido</p>
+                </section>
+
+                <section class="tarjeta">
+                    <h2>2. Datos del siniestro</h2>
+                    <div class="fila">
+                        <label class="campo"><span>Tipo de siniestro</span>
+                            <select><option>Seleccionar ▾</option><option>Vehicular</option><option>Salud</option><option>Hogar</option><option>Vida</option></select></label>
+                        <label class="campo"><span>Fecha del hecho</span><input type="date"></label>
+                    </div>
+                    <div class="fila">
+                        <label class="campo"><span>Monto estimado</span><input type="text" placeholder="S/ 0.00"></label>
+                        <label class="campo"><span>Póliza</span><input type="text" placeholder="N.º de póliza"></label>
+                    </div>
+                    <label class="campo"><span>Descripción</span><textarea></textarea></label>
+                </section>
+
+                <section class="tarjeta adjuntos">
+                    <h2>3. Adjuntos</h2>
+                    <div class="adjuntos__cuerpo">
+                        <label class="zona-carga">Arrastra archivos aquí o selecciona<input type="file" multiple hidden></label>
+                        <div class="carga">
+                            <p>video_inspeccion.mp4 · 184 MB <b>62 %</b></p>
+                            <div class="progreso"><div style="width: 62%"></div></div>
+                            <small>Puedes seguir trabajando mientras se carga</small>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="acciones">
+                    <a class="boton" href="../W-06/index.html">Cancelar</a>
+                    <button type="submit" class="boton boton--primario">Guardar reclamo</button>
+                </div>
+            </form>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

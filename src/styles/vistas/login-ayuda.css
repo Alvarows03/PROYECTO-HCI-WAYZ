@@ -1,0 +1,24 @@
+/* Ajustes propios del inicio de sesión que no estaban en el wireframe: contraseña visible, errores y cuentas demo. */
+.v-login .campo-clave { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem; }
+.v-login .campo-clave input { margin-bottom: 0.2rem; }
+.v-login .enlace-boton {
+  width: auto; min-height: var(--alto-toque); padding: 0 0.3rem; font-size: 1rem; font-weight: 600; color: var(--enlace);
+  text-decoration: underline; background: none; border: 0; border-radius: 0; cursor: pointer;
+}
+.v-login .enlace-boton:hover { background: none; text-decoration-thickness: 3px; }
+.v-login .opciones { margin-bottom: 1rem; }
+.v-login .boton-login { width: 100%; min-height: 3rem; font-size: 1.05rem; color: var(--on-primario); background: var(--azul-oscuro); }
+.v-login .boton-login:hover { background: var(--azul-hover); }
+.v-login .error-login {
+  margin: 1rem 0 0; padding: 0.8rem 1rem; font-weight: 700; color: var(--rojo); background: var(--rojo-suave);
+  border: 2px solid var(--rojo); border-radius: 0.5rem;
+}
+.v-login .demo { margin-top: 1.2rem; padding: 0.5rem 1rem; border: 1px solid var(--borde); border-radius: 0.5rem; }
+.v-login .demo summary { min-height: var(--alto-toque); display: flex; align-items: center; font-weight: 700; cursor: pointer; }
+.v-login .demo ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0 1rem; margin: 0; padding: 0; list-style: none; }
+.v-login .login__formulario { gap: 0; }
+.v-login footer { padding-top: 1.5rem; }
+@media (max-width: 800px) { .v-login .login__bienvenida img { max-width: 70%; } }
+
+/* El logo tiene letras grises: siempre sobre blanco para que se lea en cualquier tema. */
+.v-login .login__bienvenida { background: #fff; border-color: var(--borde); }

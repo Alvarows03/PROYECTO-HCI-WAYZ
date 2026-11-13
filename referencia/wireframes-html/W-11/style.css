@@ -1,0 +1,7 @@
+/* ============ W-11 Expediente – Identidad y listas de control ============ */
+.identidad { display: grid; grid-template-columns: 1fr 1.9fr; gap: 16px; margin-bottom: 16px; align-items: start; }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.aviso-punteado { margin: 12px 0; padding: 18px 12px; font-size: 9.5px; background: var(--ambar-suave);
+    border: 1.5px dashed var(--borde-error); border-radius: 8px; }
+.boton--derecha { float: right; }
+@media (max-width: 900px) { .identidad { grid-template-columns: 1fr; } }

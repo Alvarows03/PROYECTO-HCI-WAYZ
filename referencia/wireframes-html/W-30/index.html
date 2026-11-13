@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Notificaciones y acuses de recibo</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../W-04/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html" class="activo">Dictamen y plazos</a>
+            <a href="../W-31/index.html">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Dictamen y plazos</p>
+            <h1 class="pagina__titulo">Notificaciones y acuses</h1>
+            <div class="kpis">
+                <div class="kpi kpi--azul"><span>Enviadas</span><strong>12</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Con acuse de recibo</span><strong>9</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+                <div class="kpi kpi--azul"><span>Pendientes de acuse</span><strong>3</strong><svg viewBox="0 0 64 26" aria-hidden="true"><polyline points="0,20 12,18 24,22 36,16 48,19 64,12"/></svg></div>
+            </div>
+            <section class="tarjeta">
+                <table class="tabla">
+                    <thead><tr><th>Caso</th><th>Destinatario</th><th>Canal</th><th>Enviada</th><th>Acuse</th><th>Acción</th></tr></thead>
+                    <tbody>
+                        <tr class="seleccionada"><td>RCL-2041</td><td>Reclamante A</td><td>Carta notarial</td><td>dd/mm</td><td><span class="etiqueta etiqueta--ambar">Pendiente</span></td><td><a href="#">Reenviar</a></td></tr>
+                        <tr><td>RCL-2019</td><td>Reclamante B</td><td>Correo certificado</td><td>dd/mm</td><td>Recibido</td><td><a href="#">Constancia</a></td></tr>
+                        <tr><td>RCL-1987</td><td>Reclamante C</td><td>Carta notarial</td><td>dd/mm</td><td>Recibido</td><td><a href="#">Constancia</a></td></tr>
+                        <tr><td>RCL-1904</td><td>Reclamante D</td><td>Correo certificado</td><td>dd/mm</td><td><span class="etiqueta etiqueta--ambar">Pendiente</span></td><td><a href="#">Reenviar</a></td></tr>
+                        <tr><td>RCL-1855</td><td>Reclamante E</td><td>Carta notarial</td><td>dd/mm</td><td>Recibido</td><td><a href="#">Constancia</a></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <p class="nota-pie"><a href="../W-31/index.html">Ver riesgo y paquetes →</a></p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

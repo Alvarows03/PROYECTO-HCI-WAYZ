@@ -1,0 +1,100 @@
+/* ============ W-07 Registrar reclamo ============ */
+
+/* Dos tarjetas arriba, adjuntos y botones ocupan todo el ancho */
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.adjuntos,
+.acciones {
+    grid-column: 1 / -1;
+}
+
+.fila {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.fila .campo {
+    flex: 1;
+}
+
+.campo--corto {
+    flex: 0 0 90px !important;
+}
+
+.boton--verificar {
+    margin-bottom: 9px;
+    height: 30px;
+}
+
+.verificado {
+    margin: 0 0 9px;
+    padding: 6px 10px;
+    font-size: 9px;
+    color: var(--verde);
+    background: var(--verde-suave);
+    border-radius: 6px;
+}
+
+.campo input.invalido {
+    border-color: var(--rojo);
+}
+
+.error-campo {
+    margin: 0;
+    font-size: 8.5px;
+    color: var(--rojo);
+}
+
+/* Zona para soltar archivos */
+.adjuntos__cuerpo {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.zona-carga {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 180px;
+    height: 70px;
+    font-size: 9.5px;
+    text-align: center;
+    color: var(--texto-suave);
+    border: 1.5px dashed var(--borde-error);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carga {
+    flex: 1;
+    font-size: 9px;
+}
+
+.carga p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 6px;
+}
+
+.carga small {
+    display: block;
+    margin-top: 6px;
+    color: var(--texto-suave);
+}
+
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+@media (max-width: 900px) {
+    .formulario { grid-template-columns: 1fr; }
+}

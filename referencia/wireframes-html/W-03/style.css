@@ -1,0 +1,60 @@
+/* ============ W-03 Panel del analista ============ */
+
+/* Cuatro tarjetas de indicadores en una fila */
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 12px 0 18px;
+}
+
+.kpi {
+    padding: 12px 14px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-left: 3px solid var(--azul-grafico);
+    border-radius: 8px;
+}
+
+.kpi span {
+    display: block;
+    font-size: 9.5px;
+    color: var(--texto-suave);
+}
+
+.kpi strong {
+    font-size: 22px;
+    color: var(--azul-oscuro);
+}
+
+/* Tabla a la izquierda (más ancha), avisos a la derecha */
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.boton--abrir {
+    margin-top: 16px;
+}
+
+.aviso {
+    margin: 0 0 10px;
+    padding: 14px 12px;
+    font-size: 10px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    box-shadow: var(--sombra-campo);
+}
+
+.aviso--ambar {
+    background: var(--ambar-suave);
+    border-left: 4px solid var(--ambar);
+}
+
+@media (max-width: 900px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .dos-columnas { grid-template-columns: 1fr; }
+}

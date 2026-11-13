@@ -1,0 +1,40 @@
+/* ============ W-05 Alerta emergente con sonido ============ */
+/* El fondo reutiliza los estilos de W-04 (se enlazan antes que este archivo). */
+
+.modal {
+    width: min(530px, 92vw);
+    margin-top: -60px;
+}
+
+.modal__titulo--critica {
+    color: var(--rojo);
+    background: var(--rojo-suave);
+    border-left: 4px solid var(--rojo);
+}
+
+.modal__cerrar--gris {
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+}
+
+.banner {
+    margin: 0 0 14px;
+    padding: 12px 14px;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: var(--rojo);
+    background: var(--rojo-suave);
+    border: 1px solid #f3b6b6;
+    border-left: 4px solid var(--rojo);
+    border-radius: 6px;
+}
+
+.modal .tabla {
+    margin-bottom: 26px;
+}
+
+.modal__botones {
+    display: flex;
+    gap: 14px;
+}

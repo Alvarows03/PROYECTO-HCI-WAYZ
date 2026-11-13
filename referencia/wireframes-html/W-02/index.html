@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Recuperar contraseña</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <!-- Reutilizamos los estilos de W-01 porque el fondo ES la pantalla de login -->
+    <link rel="stylesheet" href="../W-01/style.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fondo: la pantalla de inicio de sesión (W-01) -->
+    <main class="login">
+        <aside class="login__bienvenida">
+            <img src="../imagenes/logo_sin_letras.png" alt="Logo de Wayz" width="242">
+        </aside>
+        <section class="login__formulario">
+            <span class="marca">Wayz</span>
+            <h1>Iniciar sesión</h1>
+            <p class="subtitulo">Ingresa con tu cuenta de la aseguradora</p>
+            <form action="#">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" placeholder="nombre@empresa.com">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" placeholder="••••••••">
+                <div class="opciones">
+                    <label class="recordar"><input type="checkbox"> Recordar este equipo</label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit">Ingresar</button>
+            </form>
+            <footer>Soporte local · Términos y condiciones · Protección de datos</footer>
+        </section>
+    </main>
+
+    <!-- Ventana emergente encima -->
+    <div class="fondo-modal">
+        <section class="modal" role="dialog" aria-labelledby="titulo-modal">
+            <div class="modal__titulo">
+                <span id="titulo-modal">Recuperar contraseña</span>
+                <a class="modal__cerrar" href="../W-01/index.html" aria-label="Cerrar">×</a>
+            </div>
+            <form class="modal__cuerpo" action="#">
+                <p class="modal__texto">Ingresa el correo de tu cuenta y te enviaremos un enlace para crear una nueva contraseña.</p>
+                <label for="correo-rec">Correo electrónico</label>
+                <input type="email" id="correo-rec" placeholder="nombre@empresa.com">
+                <p class="confirmacion">Enlace enviado. Revisa tu correo.</p>
+                <div class="modal__botones">
+                    <a class="boton" href="../W-01/index.html">Volver al inicio de sesión</a>
+                    <button type="submit" class="boton boton--primario">Enviar enlace</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

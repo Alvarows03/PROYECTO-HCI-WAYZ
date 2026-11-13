@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Peritos externos y estudios jurídicos</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Gerente ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-04/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html" class="activo">Rendimiento</a>
+            <a href="../W-38/index.html">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <h1 class="pagina__titulo">Desempeño de terceros</h1>
+            <div class="barra-superior">
+                <div class="segmentos"><a class="boton boton--primario" href="#">Peritos externos</a><a class="boton" href="#">Estudios jurídicos</a></div>
+                <form class="filtros" action="#"><select><option>Ordenar ▾</option></select><select><option>Periodo ▾</option></select></form>
+            </div>
+            <h2 class="subtitulo-seccion">Peritos externos</h2>
+            <section class="tarjeta">
+                <table class="tabla">
+                    <thead><tr><th>Perito</th><th>Casos</th><th>Tiempo promedio</th><th>Calidad del informe</th><th>Convenio</th></tr></thead>
+                    <tbody>
+                        <tr><td>Perito 1</td><td>24</td><td>2.1 días</td><td class="estrellas">★★★★☆</td><td>Renovar</td></tr>
+                        <tr><td>Perito 2</td><td>18</td><td>3.4 días</td><td class="estrellas">★★★☆☆</td><td>Evaluar</td></tr>
+                        <tr><td>Perito 3</td><td>9</td><td>5.0 días</td><td class="estrellas">★★☆☆☆</td><td>No renovar</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <h2 class="subtitulo-seccion">Estudios jurídicos externos</h2>
+            <section class="tarjeta">
+                <table class="tabla">
+                    <thead><tr><th>Estudio</th><th>Casos ante Indecopi</th><th>Tasa de éxito</th><th>Calificación</th><th>Acción</th></tr></thead>
+                    <tbody>
+                        <tr><td>Estudio A</td><td>12</td><td>75 %</td><td class="estrellas">★★★★☆</td><td><a href="#">Calificar</a></td></tr>
+                        <tr><td>Estudio B</td><td>8</td><td>50 %</td><td class="estrellas">★★★☆☆</td><td><a href="#">Calificar</a></td></tr>
+                        <tr><td>Estudio C</td><td>5</td><td>80 %</td><td class="estrellas">★★★★★</td><td><a href="#">Calificar</a></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <p class="nota-pie"><a href="../W-37/index.html">Ver reservas y reportes →</a></p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

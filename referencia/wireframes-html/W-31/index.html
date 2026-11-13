@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Antecedentes de arbitrajes y procesos</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Asesor legal ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html" class="activo"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-21/index.html">Evidencia</a>
+            <a href="../W-26/index.html">Contratos</a>
+            <a href="../W-28/index.html">Dictamen y plazos</a>
+            <a href="../W-31/index.html" class="activo">Riesgo y paquetes</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Área legal › Riesgo y paquetes</p>
+            <h1 class="pagina__titulo">Antecedentes judiciales y arbitrales</h1>
+            <form class="filtros" action="#">
+                <select><option>Tipo ▾</option></select><select><option>Resultado ▾</option></select><select><option>Materia ▾</option></select>
+            </form>
+            <div class="procesos">
+                <section class="tarjeta">
+                    <table class="tabla">
+                        <thead><tr><th>Proceso</th><th>Tipo</th><th>Materia</th><th>Resultado</th><th>Año</th></tr></thead>
+                        <tbody>
+                            <tr class="seleccionada"><td><a href="../W-32/index.html">EXP-0001</a></td><td>Arbitraje</td><td>Rechazo de cobertura</td><td>Ganado</td><td>2025</td></tr>
+                            <tr><td><a href="../W-32/index.html">EXP-0002</a></td><td>Judicial</td><td>Plazo de respuesta</td><td>Perdido</td><td>2025</td></tr>
+                            <tr><td><a href="../W-32/index.html">EXP-0003</a></td><td>Judicial</td><td>Rechazo de cobertura</td><td>Ganado</td><td>2024</td></tr>
+                            <tr><td><a href="../W-32/index.html">EXP-0004</a></td><td>Arbitraje</td><td>Monto indemnizado</td><td>Perdido</td><td>2024</td></tr>
+                            <tr><td><a href="../W-32/index.html">EXP-0005</a></td><td>Judicial</td><td>Nulidad de póliza</td><td>Ganado</td><td>2023</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <aside class="tarjeta">
+                    <h2>Resultados</h2>
+                    <div class="dona"><span>60 %</span></div>
+                    <p class="nota-pie">Ganados sobre el total</p>
+                </aside>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

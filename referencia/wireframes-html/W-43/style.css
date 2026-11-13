@@ -1,0 +1,10 @@
+/* ============ W-43 Usuarios y matriz de accesos ============ */
+.encabezado { display: flex; justify-content: space-between; align-items: center; }
+.accesos { display: grid; grid-template-columns: 1.7fr 1fr; gap: 16px; margin-top: 12px; align-items: start; }
+.subtitulo-seccion { margin: 16px 0 6px; font-size: 9px; color: var(--azul-oscuro); }
+.tabla tr.seleccionada { background: #eaf1ff; box-shadow: inset 4px 0 0 var(--azul-grafico); }
+.matriz td:not(:first-child), .matriz th:not(:first-child) { text-align: center; }
+.usuario-sel { margin: 0 0 10px; font-size: 9px; font-weight: bold; }
+.accesos .casilla { margin-bottom: 14px; font-size: 8.5px; }
+.boton--ancho { width: 100%; height: 32px; margin-top: 10px; }
+@media (max-width: 900px) { .accesos { grid-template-columns: 1fr; } }

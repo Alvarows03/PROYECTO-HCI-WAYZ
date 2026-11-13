@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Expediente – Documentos y adjuntos</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Analista ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html" class="activo"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-06/index.html">Bandeja</a>
+            <a href="../W-08/index.html" class="activo">Expediente del caso</a>
+            <a href="../W-16/index.html">Decisión e informe</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Reclamos › Expediente del caso › RCL-2041</p>
+            <div class="encabezado">
+                <h1 class="pagina__titulo">Expediente RCL-2041</h1>
+                <div class="encabezado__botones">
+                    <a class="boton" href="#">Escalar</a>
+                    <a class="boton boton--primario" href="../W-14/index.html">Decidir</a>
+                </div>
+            </div>
+            <div class="chips">
+                <span class="etiqueta etiqueta--rojo">Riesgo: Alto</span>
+                <span class="etiqueta etiqueta--ambar">Estado: En revisión</span>
+                <span class="etiqueta etiqueta--gris">Plazo: 2 días</span>
+                <small>Asegurado: nombre del asegurado</small>
+            </div>
+            <div class="subpestanas">
+                <nav>
+                    <a href="../W-08/index.html">Resumen</a>
+                    <a href="../W-09/index.html" class="activo">Documentos</a>
+                    <a href="../W-10/index.html">Inconsistencias</a>
+                    <a href="#">Identidad y listas</a>
+                    <a href="#">Similares y redes</a>
+                    <a href="#">Bitácora</a>
+                </nav>
+                <a class="boton boton--ia" href="../W-13/index.html">Asistente IA</a>
+            </div>
+
+            <div class="docs">
+                <section class="tarjeta">
+                    <h2>Adjuntos (6)</h2>
+                    <ul class="lista-adjuntos">
+                        <li><span class="icono icono--pdf">PDF</span><div><b>Informe del siniestro.pdf</b><small>PDF · 2 MB</small></div></li>
+                        <li><span class="icono icono--zip">ZIP</span><div><b>Fotos del vehículo.zip</b><small>ZIP · 48 MB</small></div></li>
+                        <li><span class="icono icono--mp4">MP4</span><div><b>Video de inspección.mp4</b><small>MP4 · 184 MB</small></div></li>
+                        <li><span class="icono icono--pdf">PDF</span><div><b>Historia clínica.pdf</b><small>PDF · 5 MB</small></div></li>
+                        <li><span class="icono icono--pdf">PDF</span><div><b>Peritaje.pdf</b><small>PDF · 3 MB</small></div></li>
+                    </ul>
+                    <a class="boton boton--ancho" href="#">Subir adjunto</a>
+                </section>
+
+                <div class="visor">
+                    <div class="visor__buscar">
+                        <input type="search" value="cláusula de exclusión">
+                        <span>5 coincidencias ‹ ›</span>
+                    </div>
+                    <div class="visor__hoja">Vista del documento seleccionado</div>
+                    <div class="progreso"><div style="width: 40%"></div></div>
+                    <small>Cargando páginas 13–24 de 60 (carga progresiva) · 40 %</small>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

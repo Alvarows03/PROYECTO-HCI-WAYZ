@@ -1,0 +1,37 @@
+/* ============ W-02 Recuperar contraseña ============ */
+/* Los estilos de la ventana (.modal) están en app.css; aquí solo lo propio. */
+
+.modal__texto {
+    margin: 0 0 22px;
+    font-size: 10.5px;
+    color: var(--texto);
+}
+
+/* Ajustes porque W-01/style.css da medidas pensadas para el login */
+.modal input[type="email"] {
+    margin-bottom: 26px;
+    box-shadow: var(--sombra-campo);
+}
+
+/* Aviso de "enlace enviado": caja ámbar con barrita a la izquierda */
+.confirmacion {
+    margin: 0 0 30px;
+    padding: 11px 14px;
+    text-align: center;
+    font-size: 10.5px;
+    background: var(--ambar-suave);
+    border: 1px dashed #e3c37a;
+    border-left: 4px solid var(--ambar);
+    border-radius: 6px;
+}
+
+.modal__botones {
+    display: flex;
+    gap: 14px;
+}
+
+.modal__botones .boton {
+    flex: 1;                 /* los dos botones se reparten el ancho */
+    height: 35px;
+    border-radius: 6px;
+}

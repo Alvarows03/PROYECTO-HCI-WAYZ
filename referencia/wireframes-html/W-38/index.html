@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayz - Carga del equipo y redistribución de casos</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo_sin_letras.png">
+    <link rel="stylesheet" href="../comunes.css">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Cabecera -->
+        <header class="cabecera">
+            <a class="cabecera__marca" href="../W-01/index.html"><img src="../imagenes/logo_con_letras.png" alt="Wayz"></a>
+            <form class="cabecera__buscar" action="#">
+                <input type="search" placeholder="Buscar caso, asegurado o DNI/RUC">
+                <span>🔍</span>
+            </form>
+            <a class="cabecera__campana" href="#" aria-label="Notificaciones">🔔</a>
+            <a class="cabecera__usuario" href="#">Usuario · Líder ▾</a>
+        </header>
+
+        <!-- Menú lateral -->
+        <aside class="lateral">
+            <a href="../W-03/index.html"><span>▦</span> Panel</a>
+            <a href="../W-06/index.html"><span>▤</span> Reclamos</a>
+            <a href="../W-18/index.html"><span>◷</span> Historial</a>
+            <a href="../W-21/index.html"><span>⚖</span> Área legal</a>
+            <a href="../W-34/index.html" class="activo"><span>▥</span> Gerencia</a>
+            <a href="../W-43/index.html"><span>⚙</span> Configuración</a>
+            <small>Se muestran solo las secciones permitidas al rol (HU-027)</small>
+        </aside>
+
+        <!-- Contenido -->
+        <main class="contenido">
+        <nav class="pestanas">
+            <a href="../W-34/index.html">Rendimiento</a>
+            <a href="../W-38/index.html" class="activo">Equipo y carga</a>
+            <a href="../W-37/index.html">Reservas y reportes</a>
+            <a href="../W-39/index.html">Automatización y cliente</a>
+        </nav>
+        <div class="pagina">
+            <p class="migas">Gerencia › Equipo y carga</p>
+            <h1 class="pagina__titulo">Carga del equipo</h1>
+            <div class="equipo">
+                <section>
+                    <h2 class="subtitulo-seccion">Carga por analista</h2>
+                    <div class="analista"><span>Analista 1<br><span class="etiqueta etiqueta--gris">Sobrecargado</span></span><div class="progreso"><div style="width: 95%"></div></div><b>19 casos</b></div>
+                    <div class="analista"><span>Analista 2</span><div class="progreso"><div style="width: 70%"></div></div><b>14 casos</b></div>
+                    <div class="analista"><span>Analista 3</span><div class="progreso"><div style="width: 45%"></div></div><b>9 casos</b></div>
+                    <div class="analista"><span>Analista 4</span><div class="progreso"><div style="width: 30%"></div></div><b>6 casos</b></div>
+                </section>
+                <section class="tarjeta">
+                    <h2>Redistribuir casos pendientes</h2>
+                    <p class="desde">Desde: Analista 1</p>
+                    <label class="casilla"><input type="checkbox" checked> RCL-2052 · Medio</label>
+                    <label class="casilla"><input type="checkbox" checked> RCL-2047 · Medio</label>
+                    <label class="casilla"><input type="checkbox"> RCL-2033 · Bajo</label>
+                    <label class="casilla"><input type="checkbox"> RCL-2029 · Bajo</label>
+                    <label class="campo"><span>Hacia</span><select><option>Analista 4 ▾</option><option>Analista 3</option></select></label>
+                    <a class="boton boton--primario boton--ancho" href="../W-04/index.html">Reasignar 2 casos</a>
+                </section>
+            </div>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

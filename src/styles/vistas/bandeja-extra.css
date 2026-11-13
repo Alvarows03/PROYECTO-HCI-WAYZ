@@ -1,0 +1,5 @@
+.v-bandeja .conteo { margin: 0 0 0.6rem; font-weight: 700; color: var(--texto-suave); }
+.v-bandeja .vacio { padding: 2rem 1rem; text-align: center; }
+.v-bandeja .tabla tr.seleccionada { background: var(--resalte); box-shadow: inset 5px 0 0 var(--azul-grafico); }
+.v-bandeja .filtros input[type='search'] { flex: 1 1 14rem; max-width: 24rem; }
+.v-bandeja .filtros { flex-wrap: wrap; align-items: center; }

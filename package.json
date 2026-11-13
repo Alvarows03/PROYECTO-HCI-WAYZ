@@ -1,0 +1,15 @@
+{
+  "name": "wayz-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wayz: plataforma web (HTML5, CSS3 y JavaScript) para detectar fraude en seguros",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}
