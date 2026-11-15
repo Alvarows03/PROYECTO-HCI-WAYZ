@@ -3,6 +3,7 @@
 
 import { buscarCaso, claseRiesgo, claseEstado } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
+import { esc } from '../nucleo/dom.js';
 import { hayBaseDeDatos } from '../datos/supabase.js';
 
 const SUBPESTANAS = [
@@ -22,11 +23,11 @@ export function expedienteHeader(nombreActivo, ctx) {
   const caso = buscarCaso(id) ?? trabajo.casosNuevos.find((c) => c.id === id) ?? (hayBaseDeDatos ? sinDatos : { riesgo: 'Alto', estado: 'En revisión', plazo: 2, asegurado: 'nombre del asegurado' });
   const activa = ACTIVA[nombreActivo];
   const enlaces = SUBPESTANAS.map(([ruta, nombre]) =>
-    `<a href="#/expediente/${id}/${ruta}" ${ruta === activa ? 'class="activo" aria-current="page"' : ''}>${nombre}</a>`).join('');
+    `<a href="#/expediente/${esc(id)}/${ruta}" ${ruta === activa ? 'class="activo" aria-current="page"' : ''}>${nombre}</a>`).join('');
   return `
-    <p class="migas"><a href="#/reclamos">Reclamos</a> › Expediente del caso › ${id}</p>
+    <p class="migas"><a href="#/reclamos">Reclamos</a> › Expediente del caso › ${esc(id)}</p>
     <div class="encabezado">
-      <h1 class="pagina__titulo">Expediente ${id}</h1>
+      <h1 class="pagina__titulo">Expediente ${esc(id)}</h1>
       <div class="encabezado__botones">
         <button type="button" class="boton" data-dialog="escalar">Escalar</button>
         <button type="button" class="boton boton--primario" data-dialog="decision">Decidir</button>
@@ -34,9 +35,9 @@ export function expedienteHeader(nombreActivo, ctx) {
     </div>
     <div class="chips">
       ${caso.riesgo ? `<span class="etiqueta etiqueta--${claseRiesgo(caso.riesgo)}">Riesgo: ${caso.riesgo}</span>` : ''}
-      <span class="etiqueta etiqueta--${claseEstado(caso.estado)}">Estado: ${caso.estado}</span>
+      <span class="etiqueta etiqueta--${claseEstado(caso.estado)}">Estado: ${esc(caso.estado)}</span>
       ${caso.plazo != null ? `<span class="etiqueta etiqueta--gris">Plazo: ${caso.plazo} días</span>` : ''}
-      <small>Asegurado: ${caso.asegurado}</small>
+      <small>Asegurado: ${esc(caso.asegurado)}</small>
     </div>
     <div class="subpestanas">
       <nav aria-label="Secciones del expediente">${enlaces}</nav>

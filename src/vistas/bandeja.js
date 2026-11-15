@@ -11,15 +11,15 @@ export default {
   render: ({ query, rol }) => {
     const opciones = (lista, titulo) => `<option value="">${titulo}</option>${lista.map((o) => `<option>${o}</option>`).join('')}`;
     const filas = todosLosCasos().map((c) => `
-      <tr data-id="${c.id}" data-riesgo="${c.riesgo}" data-estado="${c.estado}"
+      <tr data-id="${esc(c.id)}" data-riesgo="${esc(c.riesgo)}" data-estado="${esc(c.estado)}"
           data-texto="${esc(`${c.id} ${c.asegurado} ${c.reclamante} ${c.tipo} ${c.poliza}`.toLowerCase())}"
           class="${c.riesgo === 'Alto' ? 'destacada' : ''}">
         <td><a href="#/expediente/${c.id}/resumen"><b>${c.id}</b></a></td>
-        <td>${c.asegurado}</td><td>${c.tipo}</td>
+        <td>${esc(c.asegurado)}</td><td>${esc(c.tipo)}</td>
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.riesgo)}">${c.riesgo}</span></td>
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.urgencia)}">${c.urgencia}</span></td>
         <td>${c.plazo} d</td>
-        <td>${c.estado === 'Nuevo' ? c.estado : `<span class="etiqueta etiqueta--ambar">${c.estado}</span>`}</td>
+        <td>${c.estado === 'Nuevo' ? esc(c.estado) : `<span class="etiqueta etiqueta--ambar">${esc(c.estado)}</span>`}</td>
       </tr>`).join('');
     const puedeRegistrar = ['analista', 'lider'].includes(rol);
 

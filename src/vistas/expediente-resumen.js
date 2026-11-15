@@ -3,6 +3,7 @@ import { expedienteHeader } from '../componentes/expediente.js';
 import '../styles/vistas/expediente-resumen.css';
 import { buscarCaso, formatoMoneda } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
+import { esc } from '../nucleo/dom.js';
 import { tarjetaAgente } from '../componentes/agente.js';
 
 export default {
@@ -16,10 +17,10 @@ ${expedienteHeader('Resumen', ctx)}
                 <section class="tarjeta">
                     <h2>Datos del caso</h2>
                     <dl class="datos">
-                        <dt>Reclamante</dt><dd>${c.reclamante}</dd>
-                        <dt>Póliza</dt><dd>${c.poliza}</dd>
-                        <dt>Tipo</dt><dd>${c.tipo}</dd>
-                        <dt>Fecha del hecho</dt><dd>${c.fecha}</dd>
+                        <dt>Reclamante</dt><dd>${esc(c.reclamante)}</dd>
+                        <dt>Póliza</dt><dd>${esc(c.poliza)}</dd>
+                        <dt>Tipo</dt><dd>${esc(c.tipo)}</dd>
+                        <dt>Fecha del hecho</dt><dd>${esc(c.fecha)}</dd>
                         <dt>Monto estimado</dt><dd>${formatoMoneda(c.monto)}</dd>
                     </dl>
                 </section>

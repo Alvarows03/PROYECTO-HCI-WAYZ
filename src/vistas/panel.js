@@ -3,6 +3,7 @@ import '../styles/vistas/panel.css';
 import '../styles/vistas/panel-extra.css';
 import { CASOS, NOTIFICACIONES, claseRiesgo } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
+import { esc } from '../nucleo/dom.js';
 import { insigniaAgente, textoDeEstado } from '../componentes/agente.js';
 import { conteoPorPrioridad } from '../datos/agente.js';
 
@@ -17,8 +18,8 @@ export default {
     const kpi = (nombre, valor, ayuda) => `<div class="kpi" role="listitem"><span>${nombre}</span><strong>${valor}</strong><small>${ayuda}</small></div>`;
     const filas = casos.map((c, i) => `
       <tr class="${i === 0 ? 'seleccionada' : ''}">
-        <td><label class="selector"><input type="radio" name="caso" value="${c.id}" ${i === 0 ? 'checked' : ''} aria-label="Seleccionar ${c.id}"> <a href="#/expediente/${c.id}/resumen"><b>${c.id}</b></a></label></td>
-        <td>${c.tipo}</td>
+        <td><label class="selector"><input type="radio" name="caso" value="${esc(c.id)}" ${i === 0 ? 'checked' : ''} aria-label="Seleccionar ${esc(c.id)}"> <a href="#/expediente/${esc(c.id)}/resumen"><b>${esc(c.id)}</b></a></label></td>
+        <td>${esc(c.tipo)}</td>
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.riesgo)}">${c.riesgo}</span></td>
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.urgencia)}">${c.urgencia}</span></td>
         <td>${c.plazo} días</td>

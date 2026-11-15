@@ -16,13 +16,20 @@ const compiladas = RUTAS.map((r) => ({ ...r, ...compilar(r.ruta) }));
 let limpiar = null;
 let turno = 0;
 
+/** Los parámetros de la URL (p. ej. el código del caso) solo pueden tener letras, números, guion, punto y guion bajo. Evita inyectar HTML por enlace. */
+function parametroSeguro(texto) {
+  let t = texto;
+  try { t = decodeURIComponent(texto); } catch { /* texto mal codificado: se usa tal cual y se limpia */ }
+  return t.replace(/[^\w.-]/g, '').slice(0, 40);
+}
+
 function resolver(hash) {
   const [camino, consulta = ''] = hash.replace(/^#/, '').split('?');
   const path = camino || '/';
   for (const r of compiladas) {
     const m = r.regex.exec(path);
     if (m) {
-      const params = Object.fromEntries(r.nombres.map((n, i) => [n, decodeURIComponent(m[i + 1])]));
+      const params = Object.fromEntries(r.nombres.map((n, i) => [n, parametroSeguro(m[i + 1])]));
       return { ruta: r, params, query: Object.fromEntries(new URLSearchParams(consulta)) };
     }
   }
