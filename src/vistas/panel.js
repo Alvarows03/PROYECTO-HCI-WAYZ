@@ -3,6 +3,8 @@ import '../styles/vistas/panel.css';
 import '../styles/vistas/panel-extra.css';
 import { CASOS, NOTIFICACIONES, claseRiesgo } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
+import { insigniaAgente, textoDeEstado } from '../componentes/agente.js';
+import { conteoPorPrioridad } from '../datos/agente.js';
 
 const ORDEN = { Alto: 0, Medio: 1, Bajo: 2 };
 
@@ -20,13 +22,20 @@ export default {
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.riesgo)}">${c.riesgo}</span></td>
         <td><span class="etiqueta etiqueta--${claseRiesgo(c.urgencia)}">${c.urgencia}</span></td>
         <td>${c.plazo} días</td>
+        <td>${insigniaAgente(c.id)}</td>
       </tr>`).join('');
     const avisos = NOTIFICACIONES.slice(0, 3).map((n) =>
       `<li class="aviso ${n.tipo === 'alerta' ? 'aviso--ambar' : ''}"><a href="#${n.ruta}">${n.texto}</a></li>`).join('');
 
+    const cp = conteoPorPrioridad(casos.map((c) => c.id));
     return `
     <div class="pagina v-panel">
       <h1 class="pagina__titulo">Panel del analista</h1>
+      <section class="resumen-agente" aria-label="Resumen del agente de IA">
+        <strong>Agente Wayz</strong>
+        <span>Revisó tus casos: <b>${cp.Crítica}</b> críticos, <b>${cp.Alta}</b> altos, <b>${cp.Media + cp.Baja}</b> de menor prioridad${cp.sinEvaluar ? `, ${cp.sinEvaluar} sin evaluar` : ''}.</span>
+        <small>${textoDeEstado()}. Son sugerencias: la decisión es tuya.</small>
+      </section>
       <div class="kpis" role="list" aria-label="Indicadores de tu cola">
         ${kpi('Casos en mi cola', casos.length, 'asignados a ti')}
         ${kpi('Críticos', casos.filter((c) => c.riesgo === 'Alto').length, 'riesgo alto')}
@@ -37,7 +46,7 @@ export default {
         <section class="tarjeta" aria-labelledby="t-casos">
           <h2 id="t-casos">Casos priorizados por riesgo</h2>
           <table class="tabla" data-sin-navegar>
-            <thead><tr><th>Caso</th><th>Tipo</th><th>Riesgo</th><th>Urgencia</th><th>Plazo</th></tr></thead>
+            <thead><tr><th>Caso</th><th>Tipo</th><th>Riesgo</th><th>Urgencia</th><th>Plazo</th><th>Sugerido por el agente</th></tr></thead>
             <tbody>${filas}</tbody>
           </table>
           <button type="button" class="boton boton--primario boton--abrir" id="abrir-caso">Abrir caso seleccionado</button>

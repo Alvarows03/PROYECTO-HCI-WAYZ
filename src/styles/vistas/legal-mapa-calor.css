@@ -13,7 +13,7 @@
 
 .v-legal-mapa-calor .mapa {
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr);
   gap: 16px;
   align-items: start;
 }
@@ -76,7 +76,7 @@
 
 @media (max-width: 900px) {
 .v-legal-mapa-calor .mapa {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

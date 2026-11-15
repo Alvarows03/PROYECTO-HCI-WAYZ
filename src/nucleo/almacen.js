@@ -32,13 +32,14 @@ let sesion = leer(sessionStorage, CLAVE_SESION);
 const oyentes = new Set();
 
 export const suscribir = (fn) => (oyentes.add(fn), () => oyentes.delete(fn));
-const avisar = (que) => oyentes.forEach((fn) => fn(que));
+const avisar = (que, extra) => oyentes.forEach((fn) => fn(que, extra));
 
 export const obtenerPrefs = () => ({ ...prefs });
-export function cambiarPrefs(parcial) {
+/** `sinNube: true` = el cambio viene de la base de datos, no hace falta volver a guardarlo allí. */
+export function cambiarPrefs(parcial, { sinNube = false } = {}) {
   prefs = { ...prefs, ...parcial };
   guardar(localStorage, CLAVE_PREFS, prefs);
-  avisar('prefs');
+  avisar('prefs', { sinNube });
 }
 export function restablecerPrefs() {
   prefs = { ...PREFS_POR_DEFECTO };

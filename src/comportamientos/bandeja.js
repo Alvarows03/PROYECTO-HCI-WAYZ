@@ -2,6 +2,7 @@
 import { buscarCaso, claseRiesgo, formatoMoneda } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
 import { retrasar } from '../nucleo/dom.js';
+import { evaluacionDe } from '../datos/agente.js';
 
 export default function bandeja(raiz, ctx) {
   const form = raiz.querySelector('.filtros');
@@ -19,6 +20,8 @@ export default function bandeja(raiz, ctx) {
     raiz.querySelector('#vp-riesgo').innerHTML = `<span class="etiqueta etiqueta--${claseRiesgo(c.riesgo)}">Riesgo: ${c.riesgo}</span>`;
     raiz.querySelector('#vp-texto').textContent =
       `${c.reclamante} (${c.asegurado}). Póliza ${c.poliza}. Monto reclamado ${formatoMoneda(c.monto)}. Plazo restante: ${c.plazo} días. Estado: ${c.estado}.`;
+    const ev = evaluacionDe(id);
+    raiz.querySelector('#vp-agente').textContent = ev ? `Agente Wayz: ${ev.resumen}` : 'El agente aún no evaluó este caso.';
     raiz.querySelector('#vp-abrir').href = `#/expediente/${id}/resumen`;
   }
 

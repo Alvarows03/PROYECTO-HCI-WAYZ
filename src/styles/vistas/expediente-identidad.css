@@ -1,6 +1,6 @@
 .v-expediente-identidad .identidad {
   display: grid;
-  grid-template-columns: 1fr 1.9fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
   gap: 16px;
   margin-bottom: 16px;
   align-items: start;
@@ -21,7 +21,7 @@
 
 @media (max-width: 900px) {
 .v-expediente-identidad .identidad {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

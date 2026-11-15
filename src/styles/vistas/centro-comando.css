@@ -1,6 +1,6 @@
 .v-centro-comando .grafico-y-alertas {
   display: grid;
-  grid-template-columns: 1.7fr 1fr;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -54,11 +54,11 @@
 
 @media (max-width: 900px) {
 .v-centro-comando .kpis {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .v-centro-comando .grafico-y-alertas {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

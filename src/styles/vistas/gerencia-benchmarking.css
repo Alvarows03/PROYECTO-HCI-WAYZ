@@ -12,7 +12,7 @@
 
 .v-gerencia-benchmarking .radar {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
   gap: 16px;
   align-items: start;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 900px) {
 .v-gerencia-benchmarking .radar {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

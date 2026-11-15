@@ -1,6 +1,6 @@
 .v-nuevo-reclamo .formulario {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 14px;
   margin-top: 10px;
 }
@@ -88,7 +88,7 @@
 
 @media (max-width: 900px) {
 .v-nuevo-reclamo .formulario {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

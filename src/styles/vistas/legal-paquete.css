@@ -1,6 +1,6 @@
 .v-legal-paquete .paquete {
   display: grid;
-  grid-template-columns: 1fr 1.9fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
   gap: 16px;
   margin-top: 12px;
   align-items: start;
@@ -32,7 +32,7 @@
 
 @media (max-width: 900px) {
 .v-legal-paquete .paquete {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

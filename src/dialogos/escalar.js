@@ -3,7 +3,13 @@ import { trabajo } from '../nucleo/almacen.js';
 import { validarFormulario } from '../nucleo/formularios.js';
 import { toast } from '../nucleo/avisos.js';
 
-const PERSONAS = { superior: ['Luis Quispe (líder)', 'Gabriela Ríos (gerencia)'], colega: ['Ana Torres', 'Marcos Díaz', 'Elena Paredes'] };
+import { crearEscalamiento } from '../datos/repositorio.js';
+
+// [nombre visible, correo del perfil en la base de datos]
+const PERSONAS = {
+  superior: [['Luis Quispe (líder)', 'lider@wayz.demo'], ['Gabriela Ríos (gerencia)', 'gerente@wayz.demo']],
+  colega: [['Mateo Salas (legal)', 'legal@wayz.demo'], ['Tomás Rivera (soporte técnico)', 'tecnico@wayz.demo']],
+};
 
 export default {
   titulo: () => `Solicitar apoyo en el caso ${trabajo.casoActual}`,
@@ -31,14 +37,21 @@ export default {
   init(d) {
     const form = d.querySelector('#f-escalar');
     const llenar = () => {
-      form.destinatario.innerHTML = `<option value="">Seleccionar persona</option>${PERSONAS[form.para.value].map((p) => `<option>${p}</option>`).join('')}`;
+      form.destinatario.innerHTML = `<option value="">Seleccionar persona</option>${PERSONAS[form.para.value].map(([n, c]) => `<option value="${c}">${n}</option>`).join('')}`;
     };
     llenar();
     form.querySelectorAll('[name="para"]').forEach((r) => r.addEventListener('change', llenar));
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validarFormulario(form)) return;
-      toast(`Solicitud enviada a ${form.destinatario.value}. Queda registrada en la bitácora.`, 'ok');
+      const nombre = form.destinatario.selectedOptions[0].textContent;
+      try {
+        await crearEscalamiento({ caso: trabajo.casoActual, destinatarioCorreo: form.destinatario.value, motivo: form.motivo.value.trim(), adjuntaResumen: form.adjuntar.checked });
+      } catch (err) {
+        toast(`No se pudo enviar la solicitud: ${err.message}`, 'alerta');
+        return;
+      }
+      toast(`Solicitud enviada a ${nombre}. Queda registrada en la bitácora.`, 'ok');
       d.close('listo');
     });
   },

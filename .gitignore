@@ -1,3 +1,8 @@
 node_modules/
 dist/
 .claude/
+
+# Claves (Gemini y Supabase): NUNCA se suben a GitHub
+.env
+.env.*
+!.env.example

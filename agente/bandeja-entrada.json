@@ -1,0 +1,15 @@
+[
+  {
+    "caso": {
+      "id": "RCL-2070", "asegurado": "Asegurado H", "reclamante": "Diego Ramos", "tipo": "Vehicular", "riesgo": "Medio",
+      "urgencia": "Media", "plazo": 9, "estado": "Nuevo", "poliza": "PL-020115", "monto": 22000, "fecha": "11/11/2026"
+    },
+    "expediente": {
+      "diasDesdeInicioPoliza": 19, "valorAsegurado": 18000, "reclamosPrevios": 3,
+      "documentos": { "entregados": ["Fotos del vehículo"], "faltantes": ["Informe de peritaje", "Denuncia policial"] },
+      "inconsistencias": ["La dirección del taller no coincide con la factura"],
+      "listas": [],
+      "vinculos": [{ "caso": "RCL-2038", "motivo": "mismo teléfono" }]
+    }
+  }
+]

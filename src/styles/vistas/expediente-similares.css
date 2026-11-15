@@ -1,6 +1,6 @@
 .v-expediente-similares .similares {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 16px;
   align-items: start;
 }
@@ -35,7 +35,7 @@
 
 @media (max-width: 900px) {
 .v-expediente-similares .similares {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

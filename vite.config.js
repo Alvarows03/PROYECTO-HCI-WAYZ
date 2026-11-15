@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 
-// base './' hace que las rutas de CSS, JS e imágenes sean relativas: funciona igual en local y en GitHub Pages.
+// base './' hace que las rutas de CSS, JS e imágenes sean relativas: la carpeta dist/ funciona en cualquier hosting estático.
 export default defineConfig({
   base: './',
   server: { port: 5500 },

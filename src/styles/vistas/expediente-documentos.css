@@ -1,6 +1,6 @@
 .v-expediente-documentos .docs {
   display: grid;
-  grid-template-columns: 1fr 2.4fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
   gap: 16px;
   align-items: start;
 }
@@ -11,8 +11,12 @@
   list-style: none;
 }
 
+/* Nombres largos y etiquetas de autenticidad: nada se corta; si no cabe, la etiqueta pasa a la línea de abajo. */
+.v-expediente-documentos .lista-adjuntos li > div { flex: 1 1 8rem; min-width: 0; overflow-wrap: anywhere; }
+.v-expediente-documentos .lista-adjuntos li > .etiqueta { margin-left: auto; }
 .v-expediente-documentos .lista-adjuntos li {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
@@ -63,6 +67,9 @@
   background: var(--resalte);
 }
 
+/* La huella SHA-256 (64 caracteres seguidos) y los enlaces largos se parten en pantallas estrechas. */
+.v-expediente-documentos .visor { min-width: 0; overflow-wrap: anywhere; }
+
 .v-expediente-documentos .boton--ancho {
   width: 100%;
 }
@@ -109,7 +116,7 @@
 
 @media (max-width: 900px) {
 .v-expediente-documentos .docs {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

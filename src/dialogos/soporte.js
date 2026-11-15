@@ -18,7 +18,7 @@ export default {
         <small>Respuesta en minutos</small>
       </section>
     </div>
-    <p class="nota-pie">Atajos: pulsa <kbd>/</kbd> para buscar y <kbd>Esc</kbd> para cerrar ventanas.</p>
+    <p class="nota-pie">Atajos: <kbd>/</kbd> buscar, <kbd>?</kbd> ayuda de la pantalla y <kbd>Esc</kbd> cerrar ventanas.</p>
     <form id="f-soporte" data-propio novalidate>
       <label class="campo"><span>Asunto</span>
         <input type="text" name="asunto" placeholder="Ej.: no puedo abrir un expediente" required

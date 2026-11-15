@@ -2,7 +2,7 @@
 
 Aplicación web para **detectar fraude en seguros** (aseguradoras medianas, agencias y MGAs). Es una sola aplicación responsive hecha con **HTML5, CSS3 y JavaScript** (módulos ES), sin frameworks. Parte de los wireframes de Figma (46 pantallas web) y los unifica en un producto navegable.
 
-> **Alcance:** es un prototipo funcional de interfaz. No hay servidor: los datos son de ejemplo y las acciones (firmar, enviar, exportar PDF…) son simulaciones que avisan al usuario. Está pensado para conectarse después a una API (por ejemplo, un servicio con PostgreSQL).
+> **Alcance:** aplicación web conectada a una base de datos PostgreSQL (Supabase): inicio de sesión real, reclamos, decisiones, escalamientos, plazos y preferencias se guardan. Algunas acciones (firmar, exportar PDF…) siguen siendo simulaciones. Sin claves en `.env.local` funciona en modo demostración con datos locales.
 
 ## Cómo ejecutarlo
 
@@ -37,11 +37,18 @@ PROYECTO_WAYZ_HTML/
 ├── index.html                  única página; la app se dibuja dentro de <div id="app">
 ├── package.json                dependencias y comandos (dev, build, preview)
 ├── package-lock.json           versiones exactas de las dependencias (se sube a GitHub)
-├── vite.config.js              configuración de Vite (rutas relativas para GitHub Pages)
+├── vite.config.js              configuración de Vite (rutas relativas, sirve en cualquier hosting estático)
 ├── README.md
-├── .gitignore                  excluye node_modules/, dist/ y .claude/
-├── .github/workflows/
-│   └── desplegar.yml           publica en GitHub Pages al subir a main
+├── .gitignore                  excluye node_modules/, dist/, .claude/ y .env (la clave)
+├── .env.example                plantilla para poner la clave de Gemini (se copia como .env)
+├── base-de-datos/              SQL de la base de datos (esquema, seguridad y datos de ejemplo)
+├── agente/                     agente de IA autónomo (se ejecuta en la terminal, ver más abajo)
+│   ├── ejecutar.js             arranca el agente (todos los casos o modo vigilar)
+│   ├── agente.js               ciclo del agente: Gemini decide qué herramientas usar
+│   ├── herramientas.js         las 5 herramientas y su descripción para Gemini
+│   ├── datos-agente.js         datos de ejemplo que consultan las herramientas
+│   ├── bandeja-entrada.json    reclamos «nuevos» que el agente detecta solo en modo vigilar
+│   └── prueba.js               pruebas con un Gemini simulado (no usa internet ni clave)
 ├── src/
 │   ├── main.js                 arranque de la aplicación
 │   ├── assets/                 logos (logo_con_letras.png, logo_sin_letras.png)
@@ -49,7 +56,9 @@ PROYECTO_WAYZ_HTML/
 │   │   ├── roles.js            roles, permisos y cuentas de demostración
 │   │   └── rutas.js            mapa del sitio, pestañas y permisos por ruta
 │   ├── datos/
-│   │   └── datos.js            casos y notificaciones de ejemplo (reemplazable por una API)
+│   │   ├── datos.js            casos y notificaciones de ejemplo (reemplazable por una API)
+│   │   ├── agente.js           lee las sugerencias del agente
+│   │   └── resultados-agente.json   evaluaciones que dejó el agente (lo genera npm run agente)
 │   ├── nucleo/                 lo que sirve a toda la app
 │   │   ├── app.js              enrutador: lee #/ruta, comprueba permisos y dibuja la vista
 │   │   ├── almacen.js          estado: sesión y preferencias
@@ -63,7 +72,8 @@ PROYECTO_WAYZ_HTML/
 │   │   └── dom.js              utilidades del DOM
 │   ├── componentes/
 │   │   ├── estructura.js       cabecera, menú lateral y pestañas
-│   │   └── expediente.js       cabecera común de las pantallas del expediente
+│   │   ├── expediente.js       cabecera común de las pantallas del expediente
+│   │   └── agente.js           tarjeta e insignia «Evaluación del agente»
 │   ├── vistas/                 39 pantallas, una por archivo (solo HTML)
 │   ├── comportamientos/        21 archivos con la lógica de las vistas que la necesitan (solo JavaScript)
 │   ├── dialogos/               8 ventanas emergentes: recuperar, alerta, asistente,
@@ -74,13 +84,63 @@ PROYECTO_WAYZ_HTML/
 │       ├── temas.css           temas: clara, cálida, oscura, alto contraste y modo sol
 │       ├── base.css            reinicio, tipografía, foco visible, avisos
 │       ├── layout.css          cabecera, menú y zona de contenido (responsive)
-│       ├── botones.css · componentes.css · compartido.css · dialogos.css
+│       ├── botones.css · componentes.css · compartido.css · dialogos.css · agente.css
 │       └── vistas/             CSS propio de cada vista (con alcance .v-nombre)
 └── referencia/
     └── wireframes-html/        las 46 pantallas sueltas anteriores (solo consulta; se puede borrar)
 ```
 
 Regla de oro: **vista = HTML, comportamiento = JS, estilos = CSS**, cada uno en su archivo. Lo repetido (cabecera, menú, pestañas, cabecera del expediente, botones, tablas) está escrito una sola vez.
+
+## Agente de IA autónomo
+
+El **Agente Wayz** revisa los reclamos nuevos sin que nadie se lo pida y deja a cada uno priorizado y explicado para el analista. Es un agente porque tiene un objetivo, **decide solo** qué herramientas usar y en qué orden, y **actúa** (registra su evaluación). Un humano toma siempre la decisión final: el agente nunca aprueba ni rechaza.
+
+```
+Reclamo nuevo → el agente (Gemini) decide:
+   calcular_riesgo → (si el puntaje es alto) buscar_casos_similares · revisar_documentos · consultar_listas
+   → registrar_evaluacion (prioridad + resumen + motivos + siguiente paso)
+```
+
+| Herramienta | Qué hace |
+|---|---|
+| `calcular_riesgo` | Puntaje 0 a 100, con cada factor que suma puntos (explicable) |
+| `buscar_casos_similares` | Detecta redes: casos con el mismo teléfono, dirección o asegurado |
+| `revisar_documentos` | Documentos entregados, faltantes e inconsistencias |
+| `consultar_listas` | Coincidencias en listas de sancionados |
+| `registrar_evaluacion` | Acción final: guarda el resultado |
+
+**Cómo usarlo** (en la terminal, dentro de la carpeta del proyecto):
+
+```bash
+npm run agente            # evalúa todos los reclamos y guarda src/datos/resultados-agente.json
+npm run agente:vigilar    # queda trabajando solo: evalúa cada reclamo nuevo que aparezca en agente/bandeja-entrada.json
+npm run agente:prueba     # 6 pruebas automáticas con un Gemini simulado
+```
+
+**Con Gemini (gratis):** crea tu clave en [Google AI Studio](https://aistudio.google.com), copia `.env.example` como `.env` y pega la clave en `GEMINI_API_KEY=`. El archivo `.env` está en `.gitignore`: **nunca se sube a GitHub**. Sin clave, o si Gemini falla o se agota la cuota, el agente sigue funcionando con reglas (las mismas herramientas, sin IA) y lo indica en pantalla.
+
+**Dónde se ve en la aplicación:** columna «Sugerido por el agente» y resumen en el panel del analista, vista previa de la bandeja y tarjeta «Evaluación del agente» en el expediente. Cada evaluación dice qué herramientas usó y si el cerebro fue Gemini o las reglas.
+
+**Seguridad y privacidad:** el puntaje siempre es el de la herramienta (el modelo explica, no inventa cifras); la clave nunca está en el código del navegador; no uses datos reales de asegurados con la capa gratuita de Gemini, porque Google puede usarlos para mejorar sus productos.
+
+## Agente dentro de la app
+
+Al registrar un reclamo (o subir adjuntos) la app ejecuta el agente en **modo reglas** (`src/datos/agente-reglas.js`): calcula el puntaje con los datos reales de la base, guarda la evaluación y prioriza el caso. Con `npm run agente` (y la clave de Gemini en `.env`) la evaluación se enriquece con IA; `npm run agente:subir` la guarda en la base.
+
+## Base de datos (PostgreSQL en Supabase)
+
+La carpeta `base-de-datos/` guarda el SQL para recrear la base desde cero, en este orden:
+
+| Archivo | Qué hace |
+|---|---|
+| `01-esquema.sql` | 17 tablas, índices, la bitácora de solo agregar (un trigger bloquea editar o borrar) y la vista `vista_bandeja` |
+| `02-seguridad.sql` | Seguridad por filas (RLS): sin cuenta no se ve nada y cada rol solo accede a lo suyo |
+| `03-datos-ejemplo.sql` | Los mismos casos, usuarios y evaluaciones del agente que usa la aplicación (datos ficticios) |
+
+Las contraseñas **no** se guardan en las tablas: las gestiona Supabase Auth. Al crear una cuenta en Authentication con el mismo correo de un usuario (por ejemplo `analista@wayz.demo`), el perfil se enlaza solo.
+
+> **Conexión:** copia `.env.example` como `.env.local` y pega la URL y la clave pública (publishable) de Supabase. Las cuentas de demostración son reales en Supabase Auth (contraseña `Wayz2026`). `npm run agente:subir` guarda en la base las evaluaciones del agente (entra con la cuenta del rol técnico). Las claves **no** se suben a GitHub (`.gitignore`); cambia las contraseñas demo si publicas el proyecto.
 
 ## Cómo se aplican los principios del curso
 
@@ -110,24 +170,19 @@ Regla de oro: **vista = HTML, comportamiento = JS, estilos = CSS**, cada uno en 
 
 **Responsive:** diseño de móvil a escritorio con `grid`, `flex` y `@media`; las tablas se desplazan dentro de una región accesible; no hay desplazamiento horizontal de página.
 
-## Publicar en GitHub Pages
+## Publicación
 
-1. Sube el proyecto a un repositorio **público** de GitHub (rama `main`).
-2. En **Settings → Pages**, elige **Source: GitHub Actions**.
-3. El archivo `.github/workflows/desplegar.yml` compila y publica en cada `push`.
-4. Abre la URL que muestra Pages y **repite el recorrido completo allí** (login → panel → expediente → decisión).
-
-Como la app usa rutas con `#` y rutas relativas (`base: './'`), funciona igual en local y publicada.
+Todavía no está definido dónde se publicará. `npm run build` genera la carpeta `dist/`, que funciona en cualquier hosting estático porque usa rutas relativas y rutas con `#`. Después de publicar, repite el recorrido completo en la dirección pública (login → panel → expediente → decisión).
 
 ## Verificación realizada
 
 - Las 39 pantallas y las 8 ventanas cargan sin errores de JavaScript con los 7 roles; los permisos redirigen con un aviso.
 - Auditoría automática: controles con nombre, un solo `h1`, sin ids repetidos, sin saltos de encabezados.
 - Pruebas automáticas de los flujos principales (login correcto e incorrecto, filtros, búsqueda, decisión con confirmación, registro de reclamo, modo sol, temas, menú móvil).
-- **Pendiente recomendado:** recorrer la app solo con teclado, pasar Lighthouse y WAVE sobre la URL publicada y probar con un lector de pantalla real (NVDA / VoiceOver). Una auditoría automática no certifica accesibilidad.
+- **Pendiente recomendado:** recorrer la app solo con teclado, pasar Lighthouse y WAVE sobre la versión publicada y probar con un lector de pantalla real (NVDA / VoiceOver). Una auditoría automática no certifica accesibilidad.
 
 ## Limitaciones conocidas
 
-- Datos simulados: no hay base de datos ni autenticación real.
+- Los datos y las cuentas son de demostración (ficticios) aunque viven en una base real.
 - Algunas pantallas del expediente (identidad, redes, informe) muestran el mismo contenido de ejemplo para cualquier caso.
 - Las versiones móviles M-01…M-42 de Figma no se compararon una por una: la app es responsive, pero no es una copia píxel a píxel de esos wireframes.

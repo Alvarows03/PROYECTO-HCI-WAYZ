@@ -41,7 +41,7 @@ export default function preferencias(raiz) {
   raiz.querySelector('[data-restablecer]').addEventListener('click', () => { restablecerPrefs(); toast('Preferencias restablecidas.', 'info'); });
   raiz.querySelector('[data-guardar]').addEventListener('click', () => toast('Preferencias guardadas en este navegador.', 'ok'));
   if (modoSol) raiz.querySelector('.pagina__titulo').insertAdjacentHTML('afterend',
-    '<p class="aviso-sol">Modo sol activado: se muestra con texto grande y máximo contraste. Elige una paleta para volver a la vista normal.</p>');
+    '<p class="aviso-sol">Modo sol activado: máximo contraste y bordes gruesos. El tamaño de la letra lo controlas tú con el deslizador «Tamaño del texto». Elige una paleta para volver a la vista normal.</p>');
 
   pintar();
   return suscribir((que) => que === 'prefs' && pintar());

@@ -59,6 +59,7 @@ export default {
           <p class="vista-previa__caso" id="vp-caso"></p>
           <p id="vp-riesgo"></p>
           <p class="vista-previa__texto" id="vp-texto"></p>
+          <p class="vista-previa__agente" id="vp-agente"></p>
           <a class="boton boton--primario" id="vp-abrir" href="#/reclamos">Abrir expediente</a>
         </aside>
       </div>

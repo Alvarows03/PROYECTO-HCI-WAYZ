@@ -2,6 +2,8 @@
 import { trabajo } from '../nucleo/almacen.js';
 import { validarFormulario } from '../nucleo/formularios.js';
 import { toast } from '../nucleo/avisos.js';
+import { cambiarPlazo } from '../datos/repositorio.js';
+import { hayBaseDeDatos } from '../datos/supabase.js';
 
 const TOTAL_BASE = 30;
 
@@ -42,10 +44,17 @@ export default {
     };
     form.addEventListener('input', actualizar);
     actualizar();
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validarFormulario(form)) return;
-      if (form.accion.value === 'extender') trabajo.plazoLegalDias += Number(form.dias.value);
+      const extiende = form.accion.value === 'extender';
+      try {
+        await cambiarPlazo({ caso: trabajo.casoActual, accion: form.accion.value, dias: Number(form.dias.value), motivo: form.motivo.value.trim() });
+      } catch (err) {
+        toast(`No se pudo cambiar el plazo: ${err.message}`, 'alerta');
+        return;
+      }
+      if (extiende && !hayBaseDeDatos) trabajo.plazoLegalDias += Number(form.dias.value);
       window.dispatchEvent(new CustomEvent('wayz:plazo', { detail: { accion: form.accion.value } }));
       toast('Plazo legal actualizado y registrado en la bitácora.', 'ok');
       d.close('listo');

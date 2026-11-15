@@ -1,15 +1,16 @@
 // Vista: Iniciar sesión (wireframe W-01)
+// Izquierda: tarjeta con el logo (la «imagen o mensaje de bienvenida» del wireframe). Derecha: formulario.
 import '../styles/vistas/login.css';
-import '../styles/vistas/login-ayuda.css';
 import logo from '../assets/logo_con_letras.png';
-import { USUARIOS_DEMO, CLAVE_DEMO } from '../config/roles.js';
+import { USUARIOS_DEMO, ROLES, CLAVE_DEMO } from '../config/roles.js';
 
 export default {
   render: () => `
     <div class="v-login">
     <main class="login" id="contenido-principal" tabindex="-1">
+
       <aside class="login__bienvenida">
-        <img src="${logo}" alt="Wayz: detección de fraude en seguros" width="420" height="210">
+        <img src="${logo}" alt="Wayz: detección de fraude en seguros" width="707" height="353">
       </aside>
 
       <section class="login__formulario">
@@ -22,10 +23,8 @@ export default {
           <input type="email" id="correo" name="correo" placeholder="nombre@empresa.com" autocomplete="username" required>
 
           <label for="clave">Contraseña</label>
-          <div class="campo-clave">
-            <input type="password" id="clave" name="clave" placeholder="••••••••" autocomplete="current-password" required minlength="8">
-            <button type="button" class="enlace-boton" id="ver-clave" aria-pressed="false">Mostrar contraseña</button>
-          </div>
+          <input type="password" id="clave" name="clave" placeholder="••••••••" autocomplete="current-password" required minlength="8">
+          <button type="button" class="enlace-boton" id="ver-clave" aria-pressed="false">Mostrar contraseña</button>
 
           <div class="opciones">
             <label class="recordar"><input type="checkbox" name="recordar"> Recordar este equipo</label>
@@ -38,10 +37,10 @@ export default {
 
         <details class="demo">
           <summary>Cuentas de demostración</summary>
-          <p>Elige un rol para completar los datos. Contraseña de todas: <strong>${CLAVE_DEMO}</strong></p>
-          <ul>
-            ${USUARIOS_DEMO.map((u) => `<li><button type="button" class="enlace-boton" data-demo="${u.correo}">${u.correo}</button></li>`).join('')}
-          </ul>
+          <p class="demo__ayuda">Elige un rol para rellenar los datos. Contraseña: <strong>${CLAVE_DEMO}</strong></p>
+          <div class="demo__botones">
+            ${USUARIOS_DEMO.map((u) => `<button type="button" class="demo__boton" data-demo="${u.correo}" title="${u.correo}">${ROLES[u.rol].nombre}</button>`).join('')}
+          </div>
         </details>
 
         <footer>

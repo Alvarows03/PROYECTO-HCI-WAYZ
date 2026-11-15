@@ -20,7 +20,7 @@
 
 .v-bandeja .tabla-y-vista {
   display: grid;
-  grid-template-columns: 2.1fr 1fr;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
   gap: 16px;
   align-items: start;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 900px) {
 .v-bandeja .tabla-y-vista {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .v-bandeja .filtros {

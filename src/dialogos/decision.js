@@ -3,6 +3,7 @@ import { trabajo } from '../nucleo/almacen.js';
 import { validarFormulario, marcarError, limpiarError } from '../nucleo/formularios.js';
 import { confirmar } from '../nucleo/dialogo.js';
 import { toast } from '../nucleo/avisos.js';
+import { registrarDecision } from '../datos/repositorio.js';
 
 const TEXTO = { aprobar: 'Aprobado', rechazar: 'Rechazado', legal: 'Derivado a Legal' };
 
@@ -53,7 +54,14 @@ export default {
         aceptar: 'Sí, registrar',
       });
       if (!si) return;
-      trabajo.decision = { tipo: TEXTO[elegido], motivo: form.motivo.value.trim(), caso: trabajo.casoActual };
+      const registro = { tipo: TEXTO[elegido], motivo: form.motivo.value.trim(), caso: trabajo.casoActual };
+      try {
+        await registrarDecision({ ...registro, falsaAlarma: form.falsa.checked });
+      } catch (err) {
+        toast(`No se pudo guardar la decisión: ${err.message}`, 'alerta');
+        return;
+      }
+      trabajo.decision = registro;
       toast(`Decisión registrada: ${TEXTO[elegido]}.`, 'ok');
       d.close('listo');
       location.hash = `#/expediente/${trabajo.casoActual}/bitacora`;

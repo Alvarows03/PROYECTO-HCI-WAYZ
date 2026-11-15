@@ -48,7 +48,7 @@
 }
 
 /* MODO SOL: pensado para leer con luz directa. Negro puro sobre blanco, bordes gruesos, sin sombras
-   ni grises claros (que se «lavan» con el reflejo), texto más grueso y más grande. */
+   ni grises claros (que se «lavan» con el reflejo) y texto más grueso. No cambia el tamaño de la letra. */
 :root[data-tema='sol'] {
   --fondo-app: #fff; --fondo-panel: #fff; --fondo-suave: #ececec; --superficie: #fff;
   --texto: #000; --texto-suave: #000; --etiqueta: #000; --titulo: #00112b; --enlace: #0a2ea8;

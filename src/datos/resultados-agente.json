@@ -1,0 +1,180 @@
+{
+  "generado": "2026-11-13T23:59:35.095Z",
+  "modo": "reglas",
+  "modelo": null,
+  "evaluaciones": {
+    "RCL-2041": {
+      "id": "RCL-2041",
+      "puntaje": 100,
+      "prioridad": "Crítica",
+      "resumen": "Prioridad crítica (100/100). Señales principales: 3 inconsistencia(s) detectada(s); Monto reclamado (S/ 18500) mayor al valor asegurado (S/ 15000).",
+      "motivos": [
+        "3 inconsistencia(s) detectada(s)",
+        "Monto reclamado (S/ 18500) mayor al valor asegurado (S/ 15000)",
+        "Posible coincidencia en listas de sancionados",
+        "Siniestro 41 días después de contratar la póliza"
+      ],
+      "accion": "Revisar hoy con prioridad. Verificar los casos vinculados y evaluar derivar a Legal antes de pagar.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 1,
+      "coincidenciaListas": true,
+      "fecha": "2026-11-13T23:59:35.085Z"
+    },
+    "RCL-2038": {
+      "id": "RCL-2038",
+      "puntaje": 49,
+      "prioridad": "Alta",
+      "resumen": "Prioridad alta (49/100). Señales principales: 3 caso(s) vinculado(s) por datos en común; 2 reclamos previos del mismo asegurado.",
+      "motivos": [
+        "3 caso(s) vinculado(s) por datos en común",
+        "2 reclamos previos del mismo asegurado",
+        "1 inconsistencia(s) detectada(s)"
+      ],
+      "accion": "Revisar en el día y confirmar las señales detectadas antes de decidir.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": true,
+      "documentosFaltantes": 0,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.089Z"
+    },
+    "RCL-2052": {
+      "id": "RCL-2052",
+      "puntaje": 5,
+      "prioridad": "Baja",
+      "resumen": "Prioridad baja (5/100). Señales principales: 1 documento(s) faltante(s).",
+      "motivos": [
+        "1 documento(s) faltante(s)"
+      ],
+      "accion": "Sin señales de alerta. Puede seguir el trámite normal.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 1,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.091Z"
+    },
+    "RCL-2047": {
+      "id": "RCL-2047",
+      "puntaje": 65,
+      "prioridad": "Alta",
+      "resumen": "Prioridad alta (65/100). Señales principales: Monto reclamado (S/ 52000) mayor al valor asegurado (S/ 50000); Siniestro 28 días después de contratar la póliza.",
+      "motivos": [
+        "Monto reclamado (S/ 52000) mayor al valor asegurado (S/ 50000)",
+        "Siniestro 28 días después de contratar la póliza",
+        "2 documento(s) faltante(s)",
+        "1 inconsistencia(s) detectada(s)"
+      ],
+      "accion": "Revisar en el día y confirmar las señales detectadas antes de decidir.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 2,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.092Z"
+    },
+    "RCL-2033": {
+      "id": "RCL-2033",
+      "puntaje": 0,
+      "prioridad": "Baja",
+      "resumen": "Prioridad baja (0/100). No se encontraron señales de alerta.",
+      "motivos": [],
+      "accion": "Sin señales de alerta. Puede seguir el trámite normal.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 0,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.093Z"
+    },
+    "RCL-2029": {
+      "id": "RCL-2029",
+      "puntaje": 0,
+      "prioridad": "Baja",
+      "resumen": "Prioridad baja (0/100). No se encontraron señales de alerta.",
+      "motivos": [],
+      "accion": "Sin señales de alerta. Puede seguir el trámite normal.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 0,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.094Z"
+    },
+    "RCL-2025": {
+      "id": "RCL-2025",
+      "puntaje": 0,
+      "prioridad": "Baja",
+      "resumen": "Prioridad baja (0/100). No se encontraron señales de alerta.",
+      "motivos": [],
+      "accion": "Sin señales de alerta. Puede seguir el trámite normal.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 0,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T23:59:35.095Z"
+    },
+    "RCL-2070": {
+      "id": "RCL-2070",
+      "puntaje": 92,
+      "prioridad": "Crítica",
+      "resumen": "Prioridad crítica (92/100). Señales principales: Monto reclamado (S/ 22000) mayor al valor asegurado (S/ 18000); Siniestro 19 días después de contratar la póliza.",
+      "motivos": [
+        "Monto reclamado (S/ 22000) mayor al valor asegurado (S/ 18000)",
+        "Siniestro 19 días después de contratar la póliza",
+        "3 reclamos previos del mismo asegurado",
+        "1 caso(s) vinculado(s) por datos en común"
+      ],
+      "accion": "Revisar hoy con prioridad. Verificar los casos vinculados y evaluar derivar a Legal antes de pagar.",
+      "herramientas": [
+        "calcular_riesgo",
+        "buscar_casos_similares",
+        "revisar_documentos",
+        "consultar_listas"
+      ],
+      "modo": "reglas",
+      "redSospechosa": false,
+      "documentosFaltantes": 2,
+      "coincidenciaListas": false,
+      "fecha": "2026-11-13T19:20:32.005Z"
+    }
+  }
+}

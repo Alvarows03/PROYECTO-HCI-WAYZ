@@ -57,7 +57,7 @@ export default {
           <h2 id="h-adjuntos">3. Adjuntos</h2>
           <div class="adjuntos__cuerpo">
             <label class="zona-carga" id="zona">Arrastra archivos aquí o selecciona
-              <input type="file" multiple class="solo-lectores" id="archivos"></label>
+              <input type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.zip,.txt" class="solo-lectores" id="archivos"></label>
             <ul class="lista-carga" id="lista-carga" aria-live="polite"></ul>
           </div>
         </section>

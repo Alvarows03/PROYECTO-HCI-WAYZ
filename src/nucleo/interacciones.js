@@ -8,6 +8,7 @@
 import { abrirDialogo } from './dialogo.js';
 import { toast, anunciar } from './avisos.js';
 import { validarFormulario } from './formularios.js';
+import { obtenerSesion } from './almacen.js';
 
 export function iniciarInteracciones() {
   document.addEventListener('click', (e) => {
@@ -46,11 +47,22 @@ export function iniciarInteracciones() {
     if (form.dataset.destino) location.hash = `#${form.dataset.destino}`;
   });
 
-  // Atajo para usuarios frecuentes (heurística 7): «/» lleva al buscador.
+  // Atajos para usuarios frecuentes (heurística 7: flexibilidad y eficiencia). No se activan mientras se escribe.
+  //   «/» busca · «?» abre la ayuda de la pantalla · «N» registra un reclamo (solo si el rol puede hacerlo)
   document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && !e.target.closest('input, textarea, select, [contenteditable]')) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.target.closest('input, textarea, select, [contenteditable]') || document.querySelector('dialog[open]')) return;
+    const sesion = obtenerSesion();
+    if (!sesion) return;
+    if (e.key === '/') {
       const b = document.getElementById('buscar');
       if (b) { e.preventDefault(); b.focus(); }
+    } else if (e.key === '?') {
+      e.preventDefault();
+      abrirDialogo('ayuda', { origen: document.activeElement });
+    } else if (e.key.toLowerCase() === 'n' && ['analista', 'lider'].includes(sesion.rol)) {
+      e.preventDefault();
+      location.hash = '#/reclamos/nuevo';
     }
   });
 }

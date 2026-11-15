@@ -4,7 +4,7 @@
 
 .v-historial-consultas .sql {
   display: grid;
-  grid-template-columns: 1fr 3.4fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3.4fr);
   gap: 16px;
   margin-top: 12px;
   align-items: start;
@@ -46,7 +46,7 @@
 
 @media (max-width: 900px) {
 .v-historial-consultas .sql {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

@@ -13,9 +13,11 @@ export const TEMAS = {
 export function aplicarPreferencias() {
   const p = obtenerPrefs();
   const raiz = document.documentElement;
-  // «Modo sol»: texto negro sobre blanco, bordes gruesos y letra más grande, para leer con luz directa.
+  // «Modo sol»: texto negro sobre blanco y bordes gruesos, para leer con luz directa.
+  // Heurística de control y previsibilidad: el modo sol NO cambia el tamaño de la letra ni el diseño de la pantalla
+  // (antes lo agrandaba un 15 % sin avisar y la interfaz «crecía»). El tamaño lo decide la persona en Preferencias de lectura.
   raiz.dataset.tema = p.sol ? 'sol' : p.tema;
-  raiz.style.fontSize = `${Math.round(p.texto * (p.sol ? 1.15 : 1))}%`;
+  raiz.style.fontSize = `${p.texto}%`;
   raiz.style.setProperty('--fuerza-contraste', `${p.sol ? 100 : p.contraste}%`);
   raiz.dataset.resaltar = String(p.resaltar);
   const boton = document.getElementById('btn-sol');

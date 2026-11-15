@@ -6,7 +6,8 @@ import { SECCIONES, rutaDeSeccion } from '../config/roles.js';
 import { pestanasVisibles, PESTANAS } from '../config/rutas.js';
 import { cambiarPrefs, obtenerPrefs, cerrarSesion, trabajo } from '../nucleo/almacen.js';
 import { NOTIFICACIONES } from '../datos/datos.js';
-import { anunciar } from '../nucleo/avisos.js';
+import { anunciar, toast } from '../nucleo/avisos.js';
+import { salir } from '../datos/repositorio.js';
 
 const sinLeer = () => NOTIFICACIONES.filter((n) => !n.leida).length;
 
@@ -25,8 +26,11 @@ export function montarEstructura(sesion) {
         <input id="buscar" type="search" placeholder="Buscar caso, asegurado o DNI/RUC" autocomplete="off">
         <button type="submit" class="cabecera__lupa"><span aria-hidden="true">🔍</span><span class="solo-lectores">Buscar</span></button>
       </form>
-      <button type="button" class="cabecera__sol" id="btn-sol" aria-pressed="false" title="Texto grande y máximo contraste para leer con luz directa">
+      <button type="button" class="cabecera__sol" id="btn-sol" aria-pressed="false" title="Máximo contraste y bordes gruesos para leer con luz directa. No cambia el tamaño de la letra.">
         <span aria-hidden="true">☀</span> Modo sol: <span data-estado>desactivado</span>
+      </button>
+      <button type="button" class="cabecera__ayuda" data-dialog="ayuda" title="Ayuda de esta pantalla (tecla ?)">
+        <span aria-hidden="true">?</span><span class="solo-lectores">Ayuda de esta pantalla</span>
       </button>
       <a class="cabecera__campana" href="#/notificaciones" aria-label="Notificaciones: ${n} sin leer">
         <span aria-hidden="true">🔔</span>${n ? `<span class="insignia" aria-hidden="true">${n}</span>` : ''}
@@ -87,7 +91,12 @@ function conectarEventos(raiz) {
   raiz.querySelector('#btn-sol').addEventListener('click', () => {
     const activo = !obtenerPrefs().sol;
     cambiarPrefs({ sol: activo });
-    anunciar(activo ? 'Modo sol activado: texto grande y máximo contraste.' : 'Modo sol desactivado.');
+    // Retroalimentación explícita (heurística 1): se dice qué cambió y qué NO cambió, y dónde ajustar el tamaño del texto.
+    const mensaje = activo
+      ? 'Modo sol activado: máximo contraste y bordes gruesos. El tamaño de la letra no cambia; puedes ajustarlo en Preferencias de lectura.'
+      : 'Modo sol desactivado: volviste a la paleta que tenías elegida.';
+    anunciar(mensaje);
+    toast(mensaje, 'info');
   });
 
   // Menú de usuario (patrón de botón con lista desplegable).
@@ -109,7 +118,7 @@ function conectarEventos(raiz) {
     else if (app.classList.contains('app--menu')) alternarMenu(false);
   });
   document.addEventListener('click', (e) => !e.target.closest('.menu-usuario') && !lista.hidden && cerrar(false));
-  raiz.querySelector('#btn-salir').addEventListener('click', () => { cerrarSesion(); location.hash = '#/login'; });
+  raiz.querySelector('#btn-salir').addEventListener('click', async () => { await salir(); cerrarSesion(); location.hash = '#/login'; });
 }
 
 /** Actualiza menú lateral y pestañas según la ruta actual. */

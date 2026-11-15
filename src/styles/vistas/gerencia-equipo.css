@@ -1,6 +1,6 @@
 .v-gerencia-equipo .equipo {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 24px;
   margin-top: 12px;
   align-items: start;
@@ -14,7 +14,7 @@
 
 .v-gerencia-equipo .analista {
   display: grid;
-  grid-template-columns: 90px 1fr 50px;
+  grid-template-columns: 90px minmax(0, 1fr) 50px;
   align-items: center;
   gap: 12px;
   margin-bottom: 26px;
@@ -45,7 +45,7 @@
 
 @media (max-width: 900px) {
 .v-gerencia-equipo .equipo {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

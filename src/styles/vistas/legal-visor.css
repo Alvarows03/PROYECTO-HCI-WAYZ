@@ -13,7 +13,7 @@
 
 .v-legal-visor .visor-doble {
   display: grid;
-  grid-template-columns: 1.1fr 1.1fr 0.7fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 0.7fr);
   gap: 16px;
   align-items: start;
 }
@@ -75,7 +75,7 @@
 
 @media (max-width: 900px) {
 .v-legal-visor .visor-doble {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

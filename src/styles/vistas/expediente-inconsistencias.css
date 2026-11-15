@@ -6,7 +6,7 @@
 
 .v-expediente-inconsistencias .incons {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 16px;
   align-items: start;
 }
@@ -31,6 +31,8 @@
 
 .v-expediente-inconsistencias .lista-incons li div {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere; /* nombres de archivo largos (con guiones bajos) no deben ensanchar la pantalla */
 }
 
 .v-expediente-inconsistencias .lista-incons b, .v-expediente-inconsistencias .lista-incons small {
@@ -135,7 +137,7 @@
 
 @media (max-width: 900px) {
 .v-expediente-inconsistencias .incons {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 }

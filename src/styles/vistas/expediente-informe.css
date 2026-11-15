@@ -1,6 +1,6 @@
 .v-expediente-informe .informe {
   display: grid;
-  grid-template-columns: 1fr 2.3fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr) minmax(0, 1fr);
   gap: 14px;
   margin-top: 12px;
   align-items: start;
@@ -51,7 +51,7 @@
 
 .v-expediente-informe .datos {
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 60px minmax(0, 1fr);
   gap: 12px 8px;
   margin: 0;
   font-size: clamp(0.875rem, 0.85rem, 2.4rem);
@@ -68,7 +68,14 @@
 
 @media (max-width: 900px) {
 .v-expediente-informe .informe {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
+}
+
+/* Exportar a PDF: al imprimir solo queda el informe */
+@media print {
+  .cabecera, .lateral, .pestanas, .encabezado__botones, .migas, #avisos, #toasts, .barra-editor { display: none !important; }
+  .v-expediente-informe .informe { display: block; }
+  .v-expediente-informe .tarjeta { break-inside: avoid; box-shadow: none; border: 1px solid #999; margin-bottom: 1rem; }
 }

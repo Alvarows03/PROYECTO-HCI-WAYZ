@@ -37,6 +37,11 @@
 }
 .cabecera__sol[aria-pressed='true'] { color: #000; background: #ffc400; border-color: #ffc400; }
 
+.cabecera__ayuda {
+  display: grid; place-items: center; min-width: var(--alto-toque); min-height: var(--alto-toque); font: inherit; font-size: 1.15rem;
+  font-weight: 800; color: #fff; background: transparent; border: 2px solid #fff; border-radius: 50%; cursor: pointer;
+}
+.cabecera__ayuda:hover { background: rgba(255, 255, 255, 0.18); }
 .cabecera__campana {
   position: relative; display: grid; place-items: center; min-width: var(--alto-toque); min-height: var(--alto-toque);
   font-size: 1.1rem; text-decoration: none; background: rgba(255, 255, 255, 0.14); border-radius: 50%;

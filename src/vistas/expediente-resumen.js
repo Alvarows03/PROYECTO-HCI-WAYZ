@@ -3,6 +3,7 @@ import { expedienteHeader } from '../componentes/expediente.js';
 import '../styles/vistas/expediente-resumen.css';
 import { buscarCaso, formatoMoneda } from '../datos/datos.js';
 import { trabajo } from '../nucleo/almacen.js';
+import { tarjetaAgente } from '../componentes/agente.js';
 
 export default {
   render: (ctx) => {
@@ -10,6 +11,7 @@ export default {
     return `
         <div class="pagina v-expediente-resumen">
 ${expedienteHeader('Resumen', ctx)}
+            ${tarjetaAgente(c.id)}
             <div class="dos-iguales">
                 <section class="tarjeta">
                     <h2>Datos del caso</h2>
