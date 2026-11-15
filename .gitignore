@@ -6,3 +6,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Guías de prueba de la expo (contienen contraseñas): solo locales
+pruebas-expo/

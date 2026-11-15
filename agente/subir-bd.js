@@ -27,7 +27,7 @@ if (!url || !clave) { console.error('Faltan VITE_SUPABASE_URL y VITE_SUPABASE_PU
 const supabase = createClient(url, clave, { auth: { persistSession: false } });
 const { error: errorLogin } = await supabase.auth.signInWithPassword({
   email: process.env.AGENTE_CORREO || 'tecnico@wayz.demo',
-  password: process.env.AGENTE_CLAVE || 'Wayz2026',
+  password: process.env.AGENTE_CLAVE,
 });
 if (errorLogin) { console.error(`El agente no pudo entrar: ${errorLogin.message}`); process.exit(1); }
 

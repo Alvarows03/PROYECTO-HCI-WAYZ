@@ -3,6 +3,7 @@
 import '../styles/vistas/login.css';
 import logo from '../assets/logo_con_letras.png';
 import { USUARIOS_DEMO, ROLES, CLAVE_DEMO } from '../config/roles.js';
+import { hayBaseDeDatos } from '../datos/supabase.js';
 
 export default {
   render: () => `
@@ -35,13 +36,13 @@ export default {
           <p class="error-login" id="error-login" role="alert" hidden></p>
         </form>
 
-        <details class="demo">
+        ${hayBaseDeDatos ? '' : `<details class="demo">
           <summary>Cuentas de demostración</summary>
-          <p class="demo__ayuda">Elige un rol para rellenar los datos. Contraseña: <strong>${CLAVE_DEMO}</strong></p>
+          <p class="demo__ayuda">Modo sin conexión: elige un rol para rellenar los datos. Contraseña: <strong>${CLAVE_DEMO}</strong></p>
           <div class="demo__botones">
             ${USUARIOS_DEMO.map((u) => `<button type="button" class="demo__boton" data-demo="${u.correo}" title="${u.correo}">${ROLES[u.rol].nombre}</button>`).join('')}
           </div>
-        </details>
+        </details>`}
 
         <footer>
           <button type="button" class="enlace-boton" data-dialog="soporte">Soporte local</button> ·

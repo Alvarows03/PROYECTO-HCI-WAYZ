@@ -16,7 +16,7 @@ npm run build      # genera la carpeta dist/ para publicar
 
 ### Cuentas de demostración
 
-Contraseña de todas: `Wayz2026`. Cada rol entra a su pantalla y solo ve sus secciones.
+Contraseña: se la pide al equipo (no se publica aquí). Sin conexión a la base, la pantalla de ingreso muestra la clave de la demo local. Cada rol entra a su pantalla y solo ve sus secciones.
 
 | Correo | Rol | Entra a |
 |---|---|---|
@@ -140,7 +140,7 @@ La carpeta `base-de-datos/` guarda el SQL para recrear la base desde cero, en es
 
 Las contraseñas **no** se guardan en las tablas: las gestiona Supabase Auth. Al crear una cuenta en Authentication con el mismo correo de un usuario (por ejemplo `analista@wayz.demo`), el perfil se enlaza solo.
 
-> **Conexión:** copia `.env.example` como `.env.local` y pega la URL y la clave pública (publishable) de Supabase. Las cuentas de demostración son reales en Supabase Auth (contraseña `Wayz2026`). `npm run agente:subir` guarda en la base las evaluaciones del agente (entra con la cuenta del rol técnico). Las claves **no** se suben a GitHub (`.gitignore`); cambia las contraseñas demo si publicas el proyecto.
+> **Conexión:** copia `.env.example` como `.env.local` y pega la URL y la clave pública (publishable) de Supabase. Las cuentas de demostración son reales en Supabase Auth (la contraseña no se publica; pídesela al equipo). `npm run agente:subir` guarda en la base las evaluaciones del agente (entra con la cuenta del rol técnico). Las claves **no** se suben a GitHub (`.gitignore`); cambia las contraseñas demo si publicas el proyecto.
 
 ## Cómo se aplican los principios del curso
 
